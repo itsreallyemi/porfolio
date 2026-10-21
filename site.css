@@ -129,3 +129,6 @@ html.has-cur.cur-out .cur { opacity: 0; }
 html.has-cur, html.has-cur * { cursor: none !important; }
 /* Text fields keep the I-beam, so placing the caret stays precise. */
 html.has-cur input, html.has-cur textarea { cursor: text !important; }
+
+/* Hidden from view, still read by screen readers and search engines. */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
