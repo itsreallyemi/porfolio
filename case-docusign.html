@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DocuSign · Emi Kobayashi</title>
+<meta name="description" content="How Emi Kobayashi redesigned DocuSign's enterprise SSO admin experience, inked 250 screens and added biometric sign-in.">
+<link rel="icon" href="https://emikobayashi.com/wp-content/uploads/2025/12/EK-Logo-scaled.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800;900&display=swap">
+<link rel="stylesheet" href="scrollcraft.css?v=3">
+<link rel="stylesheet" href="site.css?v=10">
+<link rel="stylesheet" href="case.css?v=7">
+<script>
+  /* ?motion=reduce forces the reduced-motion path for testing. */
+  (function () {
+    if (/[?&]motion=reduce\b/.test(location.search)) {
+      var mm = window.matchMedia.bind(window);
+      window.matchMedia = function (q) { return /prefers-reduced-motion:\s*reduce/.test(q) ? { matches: true, media: q, addEventListener: function () {}, addListener: function () {} } : mm(q); };
+    }
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('rm');
+  })();
+</script>
+</head>
+<body>
+
+<svg class="blob" viewBox="0 0 1400 770" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><g class="blob__back"><path/></g><g class="blob__front"><path/></g></svg>
+<div class="sc-grain" aria-hidden="true"></div>
+
+<header class="bar" id="bar">
+  <a class="bar__mark" href="index.html" aria-label="Emi Kobayashi, all work">
+    <img src="https://emikobayashi.com/wp-content/uploads/2025/12/EK-Logo-scaled.png" width="64" height="40" alt="">
+    <span class="bar__name">Emi Kobayashi</span>
+  </a>
+  <p class="bar__now cs-now" aria-live="polite"><span id="folio-num">DocuSign</span> · <b id="folio-title">Case study</b></p>
+  <nav class="cs-nav" aria-label="Case study">
+    <a class="cs-nav__all" href="index.html#work">All work</a>
+    <a class="btn btn--small cs-nav__cta" href="index.html#contact">Email Emi</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="c-hero" data-blob-at="3" data-blob-side="left">
+    <div class="c-hero__media"><div data-sc-tilt="4"><figure class="shot"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/DS-1024x683.png" width="1024" height="683" alt="DocuSign mobile sign-in screen" fetchpriority="high"></figure></div></div>
+    <div class="c-hero__copy">
+      <p class="lbl__kind">Case study · UX design</p>
+      <h1>DocuSign</h1>
+      <p class="c-deck">The end-to-end redesign of DocuSign's enterprise SSO admin experience, used by IT administrators at thousands of Fortune 500 companies.</p>
+      <dl class="c-meta">
+        <div><dt>Role</dt><dd>Product designer, Admin Design team</dd></div>
+        <div><dt>When</dt><dd>Mar 2022 to Oct 2022</dd></div>
+        <div><dt>Users</dt><dd>Enterprise IT administrators</dd></div>
+        <div><dt>Scale</dt><dd>1.4M+ customers worldwide</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="c-out" id="outcomes" data-title="Outcomes" data-blob-at="0" data-blob-side="corner">
+    <div class="c-copy">
+      <p class="c-num">Section 1</p>
+      <h2>Measurable impact</h2>
+      <p class="lead">Giving people options and removing room for human error created real impact. Enterprise clients also re-certified weeks earlier than in previous rollouts.</p>
+    </div>
+    <dl class="c-nums" data-sc-in data-sc-stagger="70">
+      <div><dt>higher login success with biometric authentication</dt><dd>+<span data-sc-count="0 14">14</span>%</dd></div>
+      <div><dt>fewer login-related support tickets</dt><dd>~<span data-sc-count="0 30">30</span>%</dd></div>
+      <div><dt>estimated annual cost savings for DocuSign</dt><dd>~$<span data-sc-count="0 900">900</span>K</dd></div>
+      <div><dt>legacy screens moved to the Ink design system</dt><dd><span data-sc-count="0 250">250</span>+</dd></div>
+      <div><dt>authentication screens designed across three device sizes</dt><dd><span data-sc-count="0 12">12</span></dd></div>
+      <div><dt>customers worldwide reached through sign-in</dt><dd><span data-sc-count="0 1.4">1.4</span>M+</dd></div>
+    </dl>
+  </section>
+
+  <section class="c-ch c-ch--flip" id="overview" data-title="Overview" data-blob-at="4" data-blob-side="right" data-sc-act="flow">
+    <figure class="c-media"><div class="shot" data-sc-parallax="-0.8"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/DS2-1024x714.png" width="1024" height="714" alt="DocuSign admin settings screens" loading="lazy"></div></figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 2</p>
+      <h2>Every enterprise login ran through this work</h2>
+      <p class="lead">Signing in is where security and ease have to coexist. Because the work covered SSO, it touched every user who logs in through their company.</p>
+      <p>I worked hand in hand with agile development teams on login settings that met both technical and user needs, mostly SSO and identity provider settings.</p>
+      <ul class="c-points">
+        <li>Owned the redesign end to end</li>
+        <li>Balanced complex technical constraints with usability</li>
+        <li>For IT administrators at thousands of Fortune 500 companies</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="c-ch" id="problem" data-title="Rework or ink it" data-blob-at="5" data-blob-side="left" data-sc-act="flow">
+    <figure class="c-media"><div class="shot" data-sc-parallax="-0.8"><img src="https://emikobayashi.com/wp-content/uploads/2022/10/Screenshot-2026-06-20-at-3.55.04-PM.png" width="1322" height="1246" alt="Audit workflow deciding whether each screen is ready for the Ink design system" loading="lazy"></div></figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 3</p>
+      <h2>Not a reskin: rework it, or ink it</h2>
+      <p class="lead">My user was the enterprise IT admin: a technical power user under compliance and security pressure, where one misstep can lock out a whole organisation.</p>
+      <p>The systems team had standardised a new design system, Ink. I audited every screen to decide whether it could move to Ink as it was, or needed rework first.</p>
+      <ol class="c-steps">
+        <li><span><b>Triage.</b> A UX audit of each existing screen.</span></li>
+        <li><span><b>Ready?</b> Apply Ink patterns and it's done.</span></li>
+        <li><span><b>Needs rework?</b> Technical research, design and iteration, developer review, then Ink.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="c-ch c-ch--flip" id="inked" data-title="250 screens inked" data-blob-at="0" data-blob-side="right" data-sc-act="flow">
+    <figure class="c-media"><div class="shot" data-sc-parallax="-0.8"><img src="https://emikobayashi.com/wp-content/uploads/2022/10/Screenshot-2026-06-20-at-3.57.48-PM-1024x635.png" width="1024" height="635" alt="Legacy admin screens next to their Ink design system versions" loading="lazy"></div></figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 4</p>
+      <h2>Inked 250 screens</h2>
+      <p class="lead">For screens that needed no rework, I applied Ink across the entire admin settings experience.</p>
+      <p>Every legacy interface got the new components, patterns and visual principles, systematically, across the board.</p>
+    </div>
+  </section>
+
+  <section class="c-ch" id="login-research" data-title="Login research" data-blob-at="1" data-blob-side="left" data-sc-act="flow">
+    <figure class="c-media"><div class="shot" data-sc-parallax="-0.8"><img src="https://emikobayashi.com/wp-content/uploads/2022/10/Screenshot-2026-06-20-at-4.00.05-PM-1024x416.png" width="1024" height="416" alt="Benchmark of Google, Amazon and Okta login flows" loading="lazy"></div></figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 5</p>
+      <h2>Research: mobile login</h2>
+      <p class="lead">Screens that needed rework, like login, gained biometric options. I started by benchmarking how other B2B companies handle sign-on and verification.</p>
+      <ul class="c-points">
+        <li><b>Google.</b> Identifier first.</li>
+        <li><b>Amazon.</b> A single step.</li>
+        <li><b>Okta.</b> SSO first.</li>
+        <li>Then a review of the Ink design kit and its patterns.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="c-ch c-ch--flip" id="icons" data-title="Iconography" data-blob-at="2" data-blob-side="right" data-sc-act="flow">
+    <figure class="c-media"><div class="shot" data-sc-parallax="-0.8"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/DS-1-847x1024.png" width="847" height="1024" alt="Custom duotone icon set with hover, active and disabled states" loading="lazy"></div></figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 6</p>
+      <h2>A custom duotone icon set</h2>
+      <p class="lead">I designed an icon set for the Agreement Cloud team and prototyped every interaction state.</p>
+      <ul class="c-points">
+        <li>Hover, active and disabled states for each icon</li>
+        <li>Sized for mobile, tablet and desktop</li>
+        <li>Used across authentication and security flows</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="c-ch" id="login-design" data-title="Login screens" data-blob-at="3" data-blob-side="left" data-sc-act="flow">
+    <figure class="c-media c-media--pair">
+      <div class="shot" data-sc-parallax="-0.6"><img src="https://emikobayashi.com/wp-content/uploads/2022/10/Screenshot-2026-06-20-at-10.01.46-PM-1024x871.png" width="1024" height="871" alt="Redesigned DocuSign login screens" loading="lazy"></div>
+      <div class="shot" data-sc-parallax="-1.4"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/DS-Asset.png" width="1462" height="1462" alt="Mobile sign-in screen detail" loading="lazy"></div>
+    </figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 7</p>
+      <h2>Design: the login screens</h2>
+      <p class="lead">A direct redesign: the must-have elements were already collected in research, so the screens came together from Ink's form fields, icons, helper text and buttons.</p>
+      <ul class="c-points">
+        <li>Assembled from Ink patterns and components</li>
+        <li>Informed by common B2B login patterns</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="c-ch c-ch--flip" id="sso" data-title="SSO certificates" data-blob-at="4" data-blob-side="right" data-sc-act="flow">
+    <figure class="c-media c-media--pair">
+      <div class="shot" data-sc-parallax="-0.6"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/DS-Admin-Identity-Provider-Manage-Settings-Tab_-SSO-Settings-1024x832.png" width="1024" height="832" alt="Identity provider SSO settings screen" loading="lazy"></div>
+      <div class="shot" data-sc-parallax="-1.4"><img src="https://emikobayashi.com/wp-content/uploads/2022/10/Docusign-1-907x1024.png" width="907" height="1024" alt="Audit of the existing certificate management flow" loading="lazy"></div>
+    </figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 8</p>
+      <h2>Going deep on SSO certificates</h2>
+      <p class="lead">I owned the just-in-time provisioning flow IT admins use to renew their organisation's SSO certificate, which controls how every employee signs in.</p>
+      <ol class="c-steps">
+        <li><span>DocuSign generates a certificate: proof that login requests really come from DocuSign.</span></li>
+        <li><span>The IT admin downloads it from the DocuSign admin console.</span></li>
+        <li><span>They upload it to their identity provider, such as Okta, Google Workspace or Azure AD.</span></li>
+        <li><span>Employees sign in through their company, and the two systems handshake securely.</span></li>
+      </ol>
+      <p>The audit showed the old flow didn't give admins the clarity or confidence to act on a high-stakes, rare task, and their options changed with timing during each rollout.</p>
+    </div>
+  </section>
+
+  <section class="c-ch c-ch--text" id="solution" data-title="The solution" data-blob-at="5" data-blob-side="corner">
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 9</p>
+      <h2>Three directions, one selected</h2>
+      <div class="c-cols">
+        <div class="c-copy">
+          <p class="lead">I mapped about 30 screens for the whole flow, ideated three solutions and reviewed them with the Systems team against guidelines and technical constraints.</p>
+          <p>Option 2 won because it lowered cognitive load: just the right information, the rest in a helper tooltip on hover, and copyable values that are easy to grab.</p>
+        </div>
+        <ul class="c-points">
+          <li>Direct download of the certificates identity providers need, no longer buried in a files section</li>
+          <li>A dedicated error-messaging system for certificate failures, with alert banners and helper text</li>
+          <li>Self-service certificate rollover</li>
+          <li>12 authentication screens, including forgot password, 2FA, biometrics and SSO, across mobile, tablet and desktop</li>
+          <li>Clearly documented specs for a smooth developer hand-off</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="c-close" data-blob-at="1" data-blob-side="corner">
+    <div class="c-next">
+      <a class="c-next__link" href="case-puzzling.html"><span>Next case study</span><b>Puzzling Places</b></a>
+      <div class="c-close__ask">
+        <a class="btn" href="index.html#contact">Email Emi</a>
+        <p>Want to talk about this work or a role on your team?</p>
+      </div>
+    </div>
+    <div class="c-foot"><span>Emi Kobayashi · Product designer</span><a href="index.html#work">All work</a></div>
+  </footer>
+
+</main>
+
+<script src="scrollcraft.js"></script>
+<script src="blob.js?v=16"></script>
+<script src="cursor.js?v=4"></script>
+<script src="case.js?v=3"></script>
+</body>
+</html>

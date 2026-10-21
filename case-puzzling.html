@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Puzzling Places · Emi Kobayashi</title>
+<meta name="description" content="How Emi Kobayashi modernised the interface of Puzzling Places, a meditative VR jigsaw puzzle game.">
+<link rel="icon" href="https://emikobayashi.com/wp-content/uploads/2025/12/EK-Logo-scaled.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800;900&display=swap">
+<link rel="stylesheet" href="scrollcraft.css?v=3">
+<link rel="stylesheet" href="site.css?v=10">
+<link rel="stylesheet" href="case.css?v=7">
+<script>
+  /* ?motion=reduce forces the reduced-motion path for testing. */
+  (function () {
+    if (/[?&]motion=reduce\b/.test(location.search)) {
+      var mm = window.matchMedia.bind(window);
+      window.matchMedia = function (q) { return /prefers-reduced-motion:\s*reduce/.test(q) ? { matches: true, media: q, addEventListener: function () {}, addListener: function () {} } : mm(q); };
+    }
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('rm');
+  })();
+</script>
+</head>
+<body>
+
+<svg class="blob" viewBox="0 0 1400 770" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><g class="blob__back"><path/></g><g class="blob__front"><path/></g></svg>
+<div class="sc-grain" aria-hidden="true"></div>
+
+<header class="bar" id="bar">
+  <a class="bar__mark" href="index.html" aria-label="Emi Kobayashi, all work">
+    <img src="https://emikobayashi.com/wp-content/uploads/2025/12/EK-Logo-scaled.png" width="64" height="40" alt="">
+    <span class="bar__name">Emi Kobayashi</span>
+  </a>
+  <p class="bar__now cs-now" aria-live="polite"><span id="folio-num">Puzzling Places</span> · <b id="folio-title">Case study</b></p>
+  <nav class="cs-nav" aria-label="Case study">
+    <a class="cs-nav__all" href="index.html#work">All work</a>
+    <a class="btn btn--small cs-nav__cta" href="index.html#contact">Email Emi</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="c-hero" data-blob-at="4" data-blob-side="left">
+    <div class="c-hero__media"><div data-sc-tilt="4"><figure class="shot"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/Puzzling-Pages-Landing-1-1024x576.avif" width="1024" height="576" alt="Puzzling Places key art with a photogrammetry temple" fetchpriority="high"></figure></div></div>
+    <div class="c-hero__copy">
+      <p class="lbl__kind">Case study · 3D work · UX design</p>
+      <h1>Puzzling Places</h1>
+      <p class="c-deck">A meditative 3D jigsaw game for VR, built from photogrammetry of real places, with an interface rebuilt to feel familiar and truly native to VR.</p>
+      <dl class="c-meta">
+        <div><dt>Role</dt><dd>UX and UI designer</dd></div>
+        <div><dt>Platform</dt><dd>Virtual reality</dd></div>
+        <div><dt>Focus</dt><dd>Spatial UI, multiplayer</dd></div>
+        <div><dt>Challenge</dt><dd>Depth versus legibility</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="c-ch c-ch--text" id="overview" data-title="Overview" data-blob-at="5" data-blob-side="corner">
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 1</p>
+      <h2>Bridging 2D habits and a 3D world</h2>
+      <div class="c-cols">
+        <p class="lead">The gameplay is deeply immersive, but the interface was rooted in early VR conventions: functional, with weak visual hierarchy and usability.</p>
+        <p>VR interfaces have to balance spatial depth with legibility, yet players still bring expectations from 2D design. My task was to modernise the UI so it feels intuitive, visually coherent, familiar and native to VR at once.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="c-ch c-ch--flip" id="before" data-title="The previous design" data-blob-at="0" data-blob-side="right" data-sc-act="flow">
+    <figure class="c-media"><div class="shot" data-sc-parallax="-0.8"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/Temple_of_Garni_Armenia_Pack-1024x576.png" width="1024" height="576" alt="The previous Puzzling Places interface, with a floating menu above the puzzle" loading="lazy"></div></figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 2</p>
+      <h2>What the old design got wrong</h2>
+      <ul class="c-points">
+        <li>The menu floats at the top, out of easy reach.</li>
+        <li>You can't see your puzzle partner.</li>
+        <li>Icons are unlabelled, so navigation is unclear.</li>
+        <li>The space doesn't feel like doing a jigsaw with friends.</li>
+        <li>There is only one music option.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="c-ch" id="small" data-title="Small updates" data-blob-at="1" data-blob-side="left" data-sc-act="flow">
+    <figure class="c-media"><div class="shot" data-sc-parallax="-0.8"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/Small-fixes-1024x576.png" width="1024" height="576" alt="Small updates to the current design: a progress indicator and room and host details" loading="lazy"></div></figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 3</p>
+      <h2>Small updates, big relief</h2>
+      <ul class="c-points">
+        <li><b>A progress indicator.</b> Pieces left behind your point of view are easy to forget, so you think you're done when you're not.</li>
+        <li><b>Room and host details.</b> Showing where a puzzle in progress is stored lets players log back in and carry on.</li>
+        <li><b>Anyone can resume.</b> The backend needed to let any player reopen a room. Today the host must log in first, so a dead headset battery ends the session.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="c-ch c-ch--flip" id="north-star" data-title="North star" data-blob-at="2" data-blob-side="right" data-sc-act="flow">
+    <figure class="c-media"><div class="shot" data-sc-parallax="-0.8"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/Ultimate-1024x683.png" width="1024" height="683" alt="North star design with four players around a table and a labelled menu below the puzzle" loading="lazy"></div></figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 4</p>
+      <h2>The north star</h2>
+      <p class="lead">A puzzle table that feels like the real thing, with controls where your hands expect them.</p>
+      <ul class="c-points">
+        <li>At least four players sit around a table, like a real puzzle night.</li>
+        <li>The menu moves to the bottom, within easy reach.</li>
+        <li>Clear labels, grouped into Settings control and Puzzle control.</li>
+        <li>A circular progress indicator confirms when the puzzle is truly finished.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="c-close" data-blob-at="3" data-blob-side="corner">
+    <div class="c-next">
+      <a class="c-next__link" href="case-fabcars.html"><span>Next case study</span><b>USC Fabcars</b></a>
+      <div class="c-close__ask">
+        <a class="btn" href="index.html#contact">Email Emi</a>
+        <p>Want to talk about this work or a role on your team?</p>
+      </div>
+    </div>
+    <div class="c-foot"><span>Emi Kobayashi · Product designer</span><a href="index.html#work">All work</a></div>
+  </footer>
+
+</main>
+
+<script src="scrollcraft.js"></script>
+<script src="blob.js?v=16"></script>
+<script src="cursor.js?v=4"></script>
+<script src="case.js?v=3"></script>
+</body>
+</html>

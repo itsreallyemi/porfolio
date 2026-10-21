@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Razor Reflection · Emi Kobayashi</title>
+<meta name="description" content="Razor Reflection: the fashion photography studio Emi Kobayashi ran in downtown Los Angeles.">
+<link rel="icon" href="https://emikobayashi.com/wp-content/uploads/2025/12/EK-Logo-scaled.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800;900&display=swap">
+<link rel="stylesheet" href="scrollcraft.css?v=3">
+<link rel="stylesheet" href="site.css?v=10">
+<link rel="stylesheet" href="case.css?v=7">
+<script>
+  /* ?motion=reduce forces the reduced-motion path for testing. */
+  (function () {
+    if (/[?&]motion=reduce\b/.test(location.search)) {
+      var mm = window.matchMedia.bind(window);
+      window.matchMedia = function (q) { return /prefers-reduced-motion:\s*reduce/.test(q) ? { matches: true, media: q, addEventListener: function () {}, addListener: function () {} } : mm(q); };
+    }
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('rm');
+  })();
+</script>
+<style>
+  /* Portfolio: each photo gets the whole screen. It opens as a framed window,
+     widens to full bleed and settles from a slight zoom as you scroll, over a
+     blurred copy of itself so nothing in the photo is ever cropped. */
+  .rr-intro { min-height: 55svh; }
+  .rr__stage { --e: clamp(0, var(--sc-p, 0) * 1.8, 1); background: var(--ek-deep); overflow: clip; }
+  .rr__bg { position: absolute; inset: -8%; width: 116%; height: 116%; max-width: none; object-fit: cover;
+    filter: blur(40px) saturate(1.15); opacity: calc(0.2 + 0.5 * var(--e)); transform: scale(calc(1.12 - 0.12 * var(--e))); }
+  .rr__frame { position: absolute; inset: 0; margin: 0;
+    clip-path: inset(calc((1 - var(--e)) * 14%) calc((1 - var(--e)) * 24%) round calc((1 - var(--e)) * 28px)); }
+  .rr__frame img { width: 100%; height: 100%; object-fit: contain; transform: scale(calc(1.16 - 0.16 * var(--e))); }
+  /* Phones are tall, so a landscape photo shown whole would be a thin band.
+     Fill the screen instead and keep the subject centred. */
+  @media (max-width: 860px) { .rr__frame img { object-fit: cover; object-position: 50% 35%; } }
+  html.rm .rr__frame { clip-path: none; }
+  html.rm .rr__frame img, html.rm .rr__bg { transform: none; }
+  html.rm .rr__bg { opacity: 0.6; }
+</style>
+</head>
+<body>
+
+<svg class="blob" viewBox="0 0 1400 770" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><g class="blob__back"><path/></g><g class="blob__front"><path/></g></svg>
+<div class="sc-grain" aria-hidden="true"></div>
+
+<header class="bar" id="bar">
+  <a class="bar__mark" href="index.html" aria-label="Emi Kobayashi, all work">
+    <img src="https://emikobayashi.com/wp-content/uploads/2025/12/EK-Logo-scaled.png" width="64" height="40" alt="">
+    <span class="bar__name">Emi Kobayashi</span>
+  </a>
+  <p class="bar__now cs-now" aria-live="polite"><span id="folio-num">Razor Reflection</span> · <b id="folio-title">Case study</b></p>
+  <nav class="cs-nav" aria-label="Case study">
+    <a class="cs-nav__all" href="index.html#work">All work</a>
+    <a class="btn btn--small cs-nav__cta" href="index.html#contact">Email Emi</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="c-hero" data-blob-at="2" data-blob-side="left">
+    <div class="c-hero__media"><div data-sc-tilt="4"><figure class="shot"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/Model-Sample-Pics-768x833.jpg" width="768" height="833" alt="Grid of fashion portfolio portraits" fetchpriority="high"></figure></div></div>
+    <div class="c-hero__copy">
+      <p class="lbl__kind">Case study · 3D work · Photography · Web design</p>
+      <h1>Razor Reflection</h1>
+      <p class="c-deck">A full photography studio in downtown Los Angeles, building portfolios for the fashion world.</p>
+      <dl class="c-meta">
+        <div><dt>Role</dt><dd>Ran the studio with a partner</dd></div>
+        <div><dt>Where</dt><dd>Downtown Los Angeles</dd></div>
+        <div><dt>Clients</dt><dd>Fashion portfolios</dd></div>
+        <div><dt>Crew</dt><dd>Makeup and hair artists</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="c-ch c-ch--text" id="studio" data-title="The studio" data-blob-at="3" data-blob-side="corner">
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 1</p>
+      <h2>Running the studio</h2>
+      <div class="c-cols">
+        <p class="lead">With my partner, I ran every part of a shoot, from preparation to the final edit.</p>
+        <ul class="c-points">
+          <li>Prepared each photoshoot</li>
+          <li>Booked makeup and hair artists</li>
+          <li>Prepared the gear</li>
+          <li>Handled post-production</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="c-ch c-ch--text rr-intro" id="portfolio" data-title="Portfolio" data-blob-at="4" data-blob-side="corner">
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 2</p>
+      <h2>Portfolio</h2>
+      <p class="lead">A selection of studio work, one frame at a time.</p>
+    </div>
+  </section>
+
+  <section class="rr" data-sc-act="pin" data-sc-span="1.9" aria-label="Studio portrait 1">
+    <div data-sc-stage class="rr__stage">
+      <img class="rr__bg" src="https://emikobayashi.com/wp-content/uploads/2017/05/IMG_7633_LR_PS_LU-scaled.jpg" alt="" loading="lazy">
+      <figure class="rr__frame"><img src="https://emikobayashi.com/wp-content/uploads/2017/05/IMG_7633_LR_PS_LU-scaled.jpg" alt="Studio portrait 1" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="rr" data-sc-act="pin" data-sc-span="1.9" aria-label="Studio portrait 2">
+    <div data-sc-stage class="rr__stage">
+      <img class="rr__bg" src="https://emikobayashi.com/wp-content/uploads/2017/05/IMG_4931-scaled.jpg" alt="" loading="lazy">
+      <figure class="rr__frame"><img src="https://emikobayashi.com/wp-content/uploads/2017/05/IMG_4931-scaled.jpg" alt="Studio portrait 2" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="rr" data-sc-act="pin" data-sc-span="1.9" aria-label="Studio portrait 3">
+    <div data-sc-stage class="rr__stage">
+      <img class="rr__bg" src="https://emikobayashi.com/wp-content/uploads/2017/05/Keke-Stylized-scaled.jpg" alt="" loading="lazy">
+      <figure class="rr__frame"><img src="https://emikobayashi.com/wp-content/uploads/2017/05/Keke-Stylized-scaled.jpg" alt="Studio portrait 3" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="rr" data-sc-act="pin" data-sc-span="1.9" aria-label="Studio portrait 4">
+    <div data-sc-stage class="rr__stage">
+      <img class="rr__bg" src="https://emikobayashi.com/wp-content/uploads/2017/05/Jackie-makeup-stylized.png" alt="" loading="lazy">
+      <figure class="rr__frame"><img src="https://emikobayashi.com/wp-content/uploads/2017/05/Jackie-makeup-stylized.png" alt="Studio portrait 4" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <footer class="c-close" data-blob-at="5" data-blob-side="corner">
+    <div class="c-next">
+      <a class="c-next__link" href="case-tripmix.html"><span>Next case study</span><b>Tripmix</b></a>
+      <div class="c-close__ask">
+        <a class="btn" href="index.html#contact">Email Emi</a>
+        <p>Want to talk about this work or a role on your team?</p>
+      </div>
+    </div>
+    <div class="c-foot"><span>Emi Kobayashi · Product designer</span><a href="index.html#work">All work</a></div>
+  </footer>
+
+</main>
+
+<script>if (document.documentElement.classList.contains('rm')) document.querySelectorAll('.rr').forEach(function (s) { s.setAttribute('data-sc-span', '1.2'); });</script>
+<script src="scrollcraft.js"></script>
+<script src="blob.js?v=16"></script>
+<script src="cursor.js?v=4"></script>
+<script src="case.js?v=3"></script>
+</body>
+</html>

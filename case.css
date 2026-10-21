@@ -1,0 +1,175 @@
+/* Case study pages. Same world as the front page: purple ground, the blob
+   behind every screen, big Mulish titles, images and text trading sides. */
+
+/* ------------------------------------------------------------- the bar -- */
+.cs-now { position: absolute; left: 50%; translate: -50% 0; white-space: nowrap; }
+.cs-nav { display: flex; align-items: center; gap: var(--sc-6); }
+.cs-nav__all { display: inline-flex; align-items: center; min-height: 2.75rem; color: var(--sc-ink); font: 700 var(--sc-t-sm)/1 var(--sc-font-text); text-decoration: none; }
+
+/* ------------------------------------------------------------ the hero -- */
+.c-hero {
+  min-height: 100svh; display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  align-items: center; gap: clamp(2rem, 6vw, 7rem);
+  padding: calc(var(--bar-h) + var(--sc-6)) var(--sc-gutter) var(--sc-8);
+}
+.c-hero__media { perspective: 1400px; }
+.c-hero__media .shot { aspect-ratio: 4 / 3; }
+.c-hero__copy { display: grid; gap: var(--sc-5); }
+.c-hero h1 { margin: 0; font: 900 var(--sc-t-4xl)/0.92 var(--sc-font-display); letter-spacing: -0.04em; text-wrap: balance; }
+.c-hero h1.c-hero__title--long { font-size: var(--sc-t-3xl); }
+.c-deck { margin: 0; color: var(--sc-ink-soft); font: 600 var(--sc-t-lg)/1.5 var(--sc-font-text); max-width: 34ch; text-wrap: pretty; }
+.c-meta { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sc-5) var(--sc-6); margin: var(--sc-3) 0 0; padding-top: var(--sc-5); border-top: 1px solid var(--sc-hairline); }
+.c-meta dt { font: 700 var(--sc-t-xs)/1 var(--sc-font-text); letter-spacing: var(--sc-track-wide); text-transform: uppercase; color: var(--ek-yellow); margin-bottom: var(--sc-2); }
+.c-meta dd { margin: 0; line-height: 1.45; font-weight: 600; }
+.c-hero__go { display: flex; gap: var(--sc-6); align-items: center; flex-wrap: wrap; margin-top: var(--sc-2); }
+
+/* ------------------------------------------------------- a chapter screen -- */
+.c-ch {
+  min-height: 90svh; display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr);
+  align-items: center; gap: clamp(2rem, 6vw, 6.5rem);
+  padding: calc(var(--bar-h) + var(--sc-7)) var(--sc-gutter) var(--sc-9);
+  scroll-margin-top: 0;
+}
+.c-ch--flip .c-media { order: 2; }
+.c-ch--text { grid-template-columns: minmax(0, 1fr); min-height: 70svh; }
+.c-ch--text .c-copy, .c-ch--wide > .c-copy { max-width: 62rem; }
+.c-ch--text .c-cols, .c-ch--wide .c-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sc-6) var(--sc-8); }
+.c-ch--wide { grid-template-columns: minmax(0, 1fr); }
+.c-copy { display: grid; gap: var(--sc-4); align-content: start; }
+.c-num { margin: 0; font: 800 var(--sc-t-sm)/1 var(--sc-font-text); color: var(--ek-yellow); letter-spacing: 0.02em; }
+.c-copy h2 { margin: 0 0 var(--sc-2); font: 900 var(--sc-t-3xl)/0.96 var(--sc-font-display); letter-spacing: -0.035em; max-width: 16ch; text-wrap: balance; }
+.c-copy h3 { margin: var(--sc-4) 0 0; font: 800 var(--sc-t-lg)/1.2 var(--sc-font-display); }
+.c-copy p { margin: 0; color: var(--sc-ink-soft); line-height: 1.68; max-width: 60ch; text-wrap: pretty; }
+.c-copy p.lead { color: var(--sc-ink); font: 600 var(--sc-t-lg)/1.5 var(--sc-font-text); }
+.c-points { margin: var(--sc-2) 0 0; padding: 0; list-style: none; display: grid; gap: var(--sc-3); }
+.c-points li { position: relative; padding-left: var(--sc-6); color: var(--sc-ink-soft); line-height: 1.55; max-width: 58ch; }
+.c-points li::before { content: ""; position: absolute; left: 0.2rem; top: 0.55em; width: 8px; height: 8px; border-radius: 50%; background: var(--ek-yellow); }
+.c-points b, .c-steps b { color: var(--sc-ink); font-weight: 800; }
+.c-steps { margin: var(--sc-2) 0 0; padding: 0; list-style: none; display: grid; gap: var(--sc-4); counter-reset: step; }
+.c-steps[data-start="3"] { counter-reset: step 2; }
+.c-steps li { display: grid; grid-template-columns: 2.25rem 1fr; gap: var(--sc-3); color: var(--sc-ink-soft); line-height: 1.55; max-width: 60ch; }
+.c-steps li::before {
+  counter-increment: step; content: counter(step); display: grid; place-items: center; width: 2rem; height: 2rem;
+  border-radius: 50%; background: var(--ek-yellow); color: var(--sc-accent-ink); font: 900 var(--sc-t-sm)/1 var(--sc-font-display);
+}
+
+/* ------------------------------------------------------------- media -- */
+.c-media { margin: 0; display: grid; gap: var(--sc-3); perspective: 1400px; }
+.c-media .shot { background: #fff; width: fit-content; max-width: 100%; margin-inline: auto; }
+/* Cap height so a tall screenshot never pushes its chapter text below the fold. */
+.c-media .shot img { width: auto; max-width: 100%; height: auto; max-height: min(72svh, 44rem); object-fit: contain; }
+.c-media--pair > .shot:nth-of-type(1) img { max-height: min(60svh, 38rem); }
+.c-media--pair > .shot:nth-of-type(2) img { max-height: min(40svh, 26rem); }
+.c-media figcaption { font-size: var(--sc-t-sm); color: var(--sc-ink-soft); line-height: 1.45; }
+/* Two images, the second overlapping the first: depth like the front page opening. */
+.c-media--pair { position: relative; display: block; padding-bottom: 14%; }
+.c-media--pair > .shot:nth-of-type(2) { position: absolute; width: 58%; right: -4%; bottom: 0; box-shadow: var(--sc-e3); }
+.c-media--pair > .shot:nth-of-type(1) { width: 88%; }
+.c-media--pair figcaption { margin-top: var(--sc-4); }
+.c-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sc-5); margin-top: var(--sc-7); align-items: start; }
+.c-gallery .shot img { height: auto; }
+.c-gallery .shot:nth-child(3n + 2) { margin-top: var(--sc-8); }
+
+/* A YouTube facade: a still and a play button until clicked, so nothing loads from YouTube on its own. */
+.c-video { position: relative; aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden; background: var(--ek-deep); box-shadow: var(--sc-e3); }
+.c-video button { position: absolute; inset: 0; width: 100%; padding: 0; border: 0; background: none; cursor: pointer; }
+.c-video img { width: 100%; height: 100%; object-fit: cover; }
+.c-video button::after {
+  content: ""; position: absolute; left: 50%; top: 50%; width: 4.5rem; height: 4.5rem; translate: -50% -50%; border-radius: 50%;
+  background: var(--sc-accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 6.5v11l9-5.5z' fill='%231C0F45'/%3E%3C/svg%3E") center / 55% no-repeat;
+  box-shadow: 6px 6px 0 var(--ek-yellow); transition: transform 160ms var(--sc-ease-out);
+}
+@media (hover: hover) and (pointer: fine) { .c-video button:hover::after { transform: scale(1.06); } }
+.c-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.c-videos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sc-6); margin-top: var(--sc-6); }
+
+/* ----------------------------------------------------- before and after -- */
+.compare { position: relative; aspect-ratio: 912 / 668; overflow: hidden; border-radius: 10px; box-shadow: var(--sc-e3), var(--sc-edge); background: #fff; --x: 50%; touch-action: pan-y; }
+.compare img { position: absolute; left: 0; top: 0; width: 100%; height: auto; max-width: none; user-select: none; pointer-events: none; }
+.compare__after { position: absolute; inset: 0; clip-path: inset(0 0 0 var(--x)); }
+.compare__after img { transform: translateY(-50.4%); }
+.compare__bar { position: absolute; top: 0; bottom: 0; left: var(--x); width: 3px; translate: -1.5px 0; background: var(--ek-yellow); pointer-events: none; }
+.compare__knob { position: absolute; top: 50%; left: var(--x); translate: -50% -50%; width: 3rem; height: 3rem; border-radius: 50%; background: var(--ek-yellow); color: var(--sc-accent-ink); box-shadow: var(--sc-e3); display: grid; place-items: center; pointer-events: none; }
+.compare__tag { position: absolute; bottom: var(--sc-4); padding: 0.4rem 0.7rem; border-radius: 4px; background: var(--sc-accent-ink); color: #fff; font: 800 var(--sc-t-xs)/1 var(--sc-font-text); pointer-events: none; }
+.compare__tag--before { left: var(--sc-4); }
+.compare__tag--after { right: var(--sc-4); }
+.compare input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; }
+.compare:has(input:focus-visible) { outline: 3px solid var(--ek-yellow); outline-offset: 4px; }
+
+/* ----------------------------------------------------------- outcomes -- */
+.c-out { padding: calc(var(--bar-h) + var(--sc-7)) var(--sc-gutter) var(--sc-9); }
+.c-out .c-copy { margin-bottom: var(--sc-8); }
+.c-nums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sc-8) var(--sc-7); max-width: var(--sc-maxw); margin: 0; }
+.c-nums div { display: grid; gap: var(--sc-3); align-content: start; padding-top: var(--sc-5); border-top: 1px solid var(--sc-hairline); }
+.c-nums dt { order: 2; color: var(--sc-ink-soft); line-height: 1.5; max-width: 30ch; }
+.c-nums dd { margin: 0; font: 900 clamp(2.8rem, 1.6rem + 3.6vw, 5.5rem)/0.95 var(--sc-font-display); letter-spacing: -0.04em; color: var(--ek-yellow); font-variant-numeric: tabular-nums; }
+
+/* -------------------------------------------------------------- close -- */
+.c-close { min-height: 90svh; display: grid; align-content: space-between; gap: var(--sc-8); padding: calc(var(--bar-h) + var(--sc-8)) var(--sc-gutter) var(--sc-6); }
+.c-next { display: grid; gap: var(--sc-4); justify-items: start; }
+.c-next a.c-next__link { color: var(--sc-ink); text-decoration: none; display: grid; gap: var(--sc-3); }
+.c-next__link span { font: 800 var(--sc-t-sm)/1 var(--sc-font-text); color: var(--ek-yellow); letter-spacing: 0.02em; }
+.c-next__link b { font: 900 var(--sc-t-4xl)/0.92 var(--sc-font-display); letter-spacing: -0.04em; text-decoration: underline; text-decoration-thickness: 4px; text-underline-offset: 0.12em; text-decoration-color: var(--sc-accent); }
+@media (hover: hover) and (pointer: fine) { .c-next__link:hover b { text-decoration-color: var(--ek-yellow); } }
+.c-close__ask { display: flex; align-items: center; gap: var(--sc-6); flex-wrap: wrap; margin-top: var(--sc-6); }
+.c-close__ask p { margin: 0; color: var(--sc-ink-soft); max-width: 40ch; line-height: 1.55; }
+.c-foot { display: flex; justify-content: space-between; gap: var(--sc-5); flex-wrap: wrap; padding-top: var(--sc-5); border-top: 1px solid var(--sc-hairline); font-size: var(--sc-t-sm); color: var(--sc-ink-soft); }
+.c-foot a { color: inherit; font-weight: 700; }
+
+/* ------------------------------------------------------------- phones -- */
+@media (max-width: 1099px) { .cs-now { display: none; } }
+@media (max-width: 860px) {
+  .cs-nav { gap: var(--sc-4); }
+  .c-hero, .c-ch, .c-ch--flip { grid-template-columns: 1fr; gap: var(--sc-6); min-height: 0; }
+  .c-hero { min-height: 100svh; align-content: center; padding-top: calc(var(--bar-h) + var(--sc-5)); }
+  .c-ch--flip .c-media { order: 0; }
+  .c-ch { padding-top: var(--sc-9); padding-bottom: var(--sc-7); }
+  .c-hero h1 { font-size: var(--sc-t-3xl); }
+  .c-ch--text .c-cols, .c-ch--wide .c-cols, .c-videos { grid-template-columns: 1fr; }
+  .c-gallery { grid-template-columns: 1fr 1fr; }
+  .c-gallery .shot:nth-child(3n + 2) { margin-top: 0; }
+  .c-gallery .shot:nth-child(even) { margin-top: var(--sc-7); }
+  .c-nums { grid-template-columns: 1fr 1fr; gap: var(--sc-6); }
+  .c-nums dd { font-size: var(--sc-t-2xl); }
+  .c-next__link b { font-size: var(--sc-t-3xl); }
+}
+
+/* ----------------------------------------------------- reduced motion -- */
+html.rm .c-media [data-sc-parallax], html.rm .c-hero__media [data-sc-parallax] { transform: none !important; }
+
+/* Titles scale with their own column, so a long single word like "Washington"
+   or "Reflection" never pushes past it at in-between widths. */
+.c-hero__copy { container-type: inline-size; }
+.c-hero h1 { font-size: min(var(--sc-t-4xl), 15.5cqi); }
+.c-hero h1.c-hero__title--long { font-size: min(var(--sc-t-3xl), 13cqi); }
+.c-copy { container-type: inline-size; }
+.c-copy h2 { font-size: min(var(--sc-t-3xl), 14cqi); }
+
+/* Type scale sized against large images: body copy reads at roughly 20px on a
+   laptop, leads and decks a step above, so text holds its own beside media. */
+:root {
+  --ek-body: clamp(1.1rem, 1rem + 0.4vw, 1.35rem);
+  --ek-lead: clamp(1.35rem, 1.1rem + 0.9vw, 1.95rem);
+}
+.c-deck { font-size: var(--ek-lead); max-width: 30ch; }
+.c-meta dd { font-size: var(--ek-body); }
+.c-copy p, .c-points li, .c-steps li { font-size: var(--ek-body); }
+.c-copy p.lead { font-size: var(--ek-lead); line-height: 1.4; max-width: 36ch; }
+.c-copy h3 { font-size: var(--sc-t-xl); }
+.c-nums dt { font-size: var(--ek-body); }
+.c-media figcaption { font-size: var(--sc-t-base); }
+.c-close__ask p { font-size: var(--ek-body); }
+
+/* Video as a link (the hosted share link cannot embed YouTube). */
+.c-video__link {
+  position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: var(--sc-4);
+  color: var(--sc-ink); text-decoration: none;
+  background: radial-gradient(circle at 50% 40%, color-mix(in oklab, var(--sc-accent) 28%, var(--ek-deep)), var(--ek-deep) 70%);
+}
+.c-video__play {
+  width: 4.5rem; height: 4.5rem; border-radius: 50%;
+  background: var(--sc-accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 6.5v11l9-5.5z' fill='%231C0F45'/%3E%3C/svg%3E") center / 55% no-repeat;
+  box-shadow: 6px 6px 0 var(--ek-yellow); transition: transform 160ms var(--sc-ease-out);
+}
+.c-video__label { font: 800 var(--sc-t-base)/1 var(--sc-font-text); letter-spacing: 0.02em; }
+@media (hover: hover) and (pointer: fine) { .c-video__link:hover .c-video__play { transform: scale(1.06); } }

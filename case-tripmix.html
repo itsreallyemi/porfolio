@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tripmix · Emi Kobayashi</title>
+<meta name="description" content="How Emi Kobayashi took Tripmix, an AI travel app, from first idea to App Store launch, and steered it toward hosted group trips.">
+<link rel="icon" href="https://emikobayashi.com/wp-content/uploads/2025/12/EK-Logo-scaled.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800;900&display=swap">
+<link rel="stylesheet" href="scrollcraft.css?v=3">
+<link rel="stylesheet" href="site.css?v=10">
+<link rel="stylesheet" href="case.css?v=7">
+<script>
+  /* ?motion=reduce forces the reduced-motion path for testing. */
+  (function () {
+    if (/[?&]motion=reduce\b/.test(location.search)) {
+      var mm = window.matchMedia.bind(window);
+      window.matchMedia = function (q) { return /prefers-reduced-motion:\s*reduce/.test(q) ? { matches: true, media: q, addEventListener: function () {}, addListener: function () {} } : mm(q); };
+    }
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('rm');
+  })();
+</script>
+<style>
+  /* Trip card fixes: the before cards and the after cards, side by side. */
+  .tm-cards { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--sc-7); margin-top: var(--sc-7); max-width: var(--sc-maxw); }
+  .tm-cards__set { display: grid; gap: var(--sc-4); align-content: start; }
+  .tm-cards__row { display: flex; gap: var(--sc-4); align-items: flex-start; flex-wrap: wrap; }
+  .tm-cards__row .shot { flex: 1 1 8rem; max-width: 14rem; }
+  .tm-cards__row .shot img { height: auto; }
+  .tm-cards__set--after .tm-cards__row .shot:first-child { max-width: 18rem; }
+  .tm-cards figcaption { color: var(--sc-ink-soft); font-size: var(--sc-t-sm); line-height: 1.45; max-width: 40ch; }
+  @media (max-width: 860px) { .tm-cards { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<svg class="blob" viewBox="0 0 1400 770" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><g class="blob__back"><path/></g><g class="blob__front"><path/></g></svg>
+<div class="sc-grain" aria-hidden="true"></div>
+
+<header class="bar" id="bar">
+  <a class="bar__mark" href="index.html" aria-label="Emi Kobayashi, all work">
+    <img src="https://emikobayashi.com/wp-content/uploads/2025/12/EK-Logo-scaled.png" width="64" height="40" alt="">
+    <span class="bar__name">Emi Kobayashi</span>
+  </a>
+  <p class="bar__now cs-now" aria-live="polite"><span id="folio-num">Tripmix</span> · <b id="folio-title">Case study</b></p>
+  <nav class="cs-nav" aria-label="Case study">
+    <a class="cs-nav__all" href="index.html#work">All work</a>
+    <a class="btn btn--small cs-nav__cta" href="index.html#contact">Email Emi</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="c-hero" data-blob-at="3" data-blob-side="left">
+    <div class="c-hero__media"><div data-sc-tilt="4"><figure class="shot"><img src="https://emikobayashi.com/wp-content/uploads/2025/11/Tripmix-1-1024x683.jpg" width="1024" height="683" alt="Two travellers looking at a phone in an airport" fetchpriority="high"></figure></div></div>
+    <div class="c-hero__copy">
+      <p class="lbl__kind">Case study · UX design · AI product</p>
+      <h1>Tripmix</h1>
+      <p class="c-deck">A travel app where anyone can plan, share and sell trips, taken from first idea to the App Store.</p>
+      <dl class="c-meta">
+        <div><dt>Role</dt><dd>Founding and principal product designer</dd></div>
+        <div><dt>When</dt><dd>Jan 2024 to Nov 2025</dd></div>
+        <div><dt>Launched</dt><dd>App Store, July 2024</dd></div>
+        <div><dt>Built with</dt><dd>Figma, Bravo Studio, Xano, OpenAI Agent Builder</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="c-out" id="outcomes" data-title="Outcomes" data-blob-at="2" data-blob-side="corner">
+    <div class="c-copy">
+      <p class="c-num">Section 1</p>
+      <h2>Measurable outcomes</h2>
+      <p class="lead">I shipped the creator storefront and won the founders over to hosted trips. When hosts arrived, sales took off: they sell $2K trips on Tripmix, and Tripmix earns a commission.</p>
+    </div>
+    <dl class="c-nums" data-sc-in data-sc-stagger="70">
+      <div><dt>App Store impressions, November 2025</dt><dd><span data-sc-count="0 8,070">8,070</span></dd></div>
+      <div><dt>App Store conversion rate</dt><dd><span data-sc-count="0 7.24">7.24</span>%</dd></div>
+      <div><dt>sessions per active device</dt><dd><span data-sc-count="0 3.39">3.39</span></dd></div>
+      <div><dt>of downloads came from App Store search</dt><dd><span data-sc-count="0 59">59</span>%</dd></div>
+      <div><dt>downloads in November 2025</dt><dd><span data-sc-count="0 450">450</span></dd></div>
+      <div><dt>countries those downloads came from</dt><dd><span data-sc-count="0 5">5</span></dd></div>
+    </dl>
+  </section>
+
+  <section class="c-ch c-ch--flip" id="context" data-title="Context" data-blob-at="4" data-blob-side="right" data-sc-act="flow">
+    <figure class="c-media"><div class="shot" data-sc-parallax="-0.8"><img src="https://emikobayashi.com/wp-content/uploads/2025/11/Tripmix-1024x683.jpg" width="1024" height="683" alt="The Tripmix app" loading="lazy"></div></figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 2</p>
+      <h2>Every traveller a creator</h2>
+      <p class="lead">Tripmix lets you discover, plan and share trips, powered by AI and itineraries from its community, and lets passionate travellers sell what they know.</p>
+      <p>As founding designer I defined the product roadmap, scoped backend requirements and led the design team, owning the whole lifecycle from concept to App Store launch.</p>
+      <ul class="c-points">
+        <li>A <b>$1.8 billion</b> global travel itinerary app market</li>
+        <li>Launched on the App Store in <b>July 2024</b></li>
+        <li><b>500</b> downloads in the first month</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="c-ch" id="problem" data-title="The problem" data-blob-at="5" data-blob-side="left" data-sc-act="flow">
+    <figure class="c-media c-media--pair">
+      <div class="shot" data-sc-parallax="-0.6"><img src="https://emikobayashi.com/wp-content/uploads/2021/11/Screenshot-2025-12-14-at-10.20.02-PM-1024x770.png" width="1024" height="770" alt="Tripmix discovery research" loading="lazy"></div>
+      <div class="shot" data-sc-parallax="-1.4"><img src="https://emikobayashi.com/wp-content/uploads/2021/11/Screenshot-2025-12-14-at-10.20.05-PM-1024x614.png" width="1024" height="614" alt="Tripmix discovery research, continued" loading="lazy"></div>
+    </figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 3</p>
+      <h2>Following the money</h2>
+      <p class="lead">We interviewed emerging travel influencers, studied the trip before, during and after, and ran a SWOT and competitor comparison to find the gaps.</p>
+      <p>The founder wanted a marketplace for influencers. I made the case early that hosted group travel was the stronger business, and showed the numbers.</p>
+      <ul class="c-points">
+        <li>A <b>$10 to $15</b> PDF itinerary needs huge volume to matter</li>
+        <li>One hosted trip, <b>8 to 12</b> people at <b>$2K to $5K</b> each, earns <b>$24K to $60K</b></li>
+        <li>The founder kept both paths, and I committed to delivering both</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="c-ch c-ch--flip" id="research" data-title="Research" data-blob-at="0" data-blob-side="right" data-sc-act="flow">
+    <figure class="c-media"><div class="shot" data-sc-parallax="-0.8"><img src="https://emikobayashi.com/wp-content/uploads/2025/11/Screenshot-2026-06-21-at-1.05.00-AM-1024x446.png" width="1024" height="446" alt="Thatch, Mindtrip and Tripmix compared" loading="lazy"></div></figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 4</p>
+      <h2>Two leaders, one gap</h2>
+      <p class="lead">Thatch owned blogger monetisation and Mindtrip had a head start on AI planning. Tripmix combined both. In 2025 Mindtrip acquired Thatch.</p>
+      <ul class="c-points">
+        <li>Creators juggled four tools: TikTok, Linktree, Notion or Wanderlog, and Stripe or Thatch</li>
+        <li>The unit economics favoured hosts, and no one served them directly yet</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="c-ch c-ch--text" id="pivot" data-title="The pivot" data-blob-at="1" data-blob-side="corner">
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 5</p>
+      <h2>Solo planning isn't broken. Group travel is.</h2>
+      <div class="c-cols">
+        <p class="lead">For half a year I kept making the case, with numbers, competitor analysis and my own field research. People enjoy planning solo trips and often just ask AI.</p>
+        <div class="c-copy">
+          <p>Group travel was chaos: coordination scattered across WhatsApp threads and improvised Google Sheets, with no tool owning it.</p>
+          <p>The founder came on board, we interviewed hosts already leading trips, and they loved having every customer touchpoint in one app. Tour guides and operators now sell full group trips on Tripmix.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="c-ch" id="ideation" data-title="Ideation" data-blob-at="2" data-blob-side="left" data-sc-act="flow">
+    <figure class="c-media c-media--pair">
+      <div class="shot" data-sc-parallax="-0.6"><img src="https://emikobayashi.com/wp-content/uploads/2021/11/Tripmix-Prioritization-Method-1009x1024.png" width="1009" height="1024" alt="Prioritisation with AARRR and an impact versus effort matrix" loading="lazy"></div>
+      <div class="shot" data-sc-parallax="-1.4"><img src="https://emikobayashi.com/wp-content/uploads/2021/11/Tripmix-Sketches-893x1024.png" width="893" height="1024" alt="Tripmix wireframe sketches" loading="lazy"></div>
+      <figcaption>Prioritisation, and early wireframes.</figcaption>
+    </figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 6</p>
+      <h2>Ranked, then sketched</h2>
+      <p class="lead">We brainstormed in FigJam, ranked ideas with AARRR (acquisition, activation, retention, revenue, referral) and sorted them on an impact versus effort matrix.</p>
+      <ul class="c-points">
+        <li>Led prioritisation and owned the product roadmap</li>
+        <li>Designed app screens hands-on with the developer</li>
+        <li>Mentored <b>two</b> junior designers</li>
+        <li>Kept testing ideas with travellers in my own network</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="c-ch c-ch--flip" id="build" data-title="Implementation" data-blob-at="3" data-blob-side="right" data-sc-act="flow">
+    <figure class="c-media"><div class="shot" data-sc-parallax="-0.8"><img src="https://emikobayashi.com/wp-content/uploads/2025/11/Screenshot-2026-06-21-at-1.13.09-AM-897x1024.png" width="897" height="1024" alt="Tripmix build pipeline from Figma to the live app" loading="lazy"></div></figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 7</p>
+      <h2>A full app, no traditional front end</h2>
+      <p class="lead">Bravo Studio turns Figma prototypes into production React Native, so I tagged every layer for Bravo and bound the UI straight to the database.</p>
+      <ol class="c-steps">
+        <li><span><b>Figma.</b> Screens tagged to Bravo's requirements.</span></li>
+        <li><span><b>Bravo Studio.</b> UI elements bound to a no-code database.</span></li>
+        <li><span><b>Xano.</b> Database tables and API endpoints.</span></li>
+        <li><span><b>OpenAI Agent Builder.</b> Intent detection and routing, in a custom chat widget.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="c-ch" id="agents" data-title="AI agent workflow" data-blob-at="4" data-blob-side="left" data-sc-act="flow">
+    <figure class="c-media"><div class="shot" data-sc-parallax="-0.8"><img src="https://emikobayashi.com/wp-content/uploads/2025/11/Screenshot-2026-06-21-at-1.16.40-AM.png" width="1138" height="964" alt="Agent architecture: a master agent routing to creator, traveler and host agents" loading="lazy"></div></figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 8</p>
+      <h2>One chat, three paths</h2>
+      <p class="lead">An in-app chat detects what you want and routes you to one of three personas, each with its own agent and its own result.</p>
+      <ul class="c-points">
+        <li><b>Travel creator.</b> Public, sellable travel plans.</li>
+        <li><b>Traveller.</b> Private, dated itineraries.</li>
+        <li><b>Host.</b> Group packages, with extra screens to prepare travellers.</li>
+        <li>Separate contexts, conditional paths and modular agents keep it easy to update</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="c-ch c-ch--flip" id="testing" data-title="Testing" data-blob-at="5" data-blob-side="right" data-sc-act="flow">
+    <figure class="c-media"><div class="shot" data-sc-parallax="-0.8"><img src="https://emikobayashi.com/wp-content/uploads/2025/11/Screenshot-2026-06-21-at-1.20.27-AM.png" width="1432" height="1256" alt="The shared Tripmix bug tracker" loading="lazy"></div></figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 9</p>
+      <h2>Triage, then launch</h2>
+      <p class="lead">Every issue went into a shared tracker with severity, details, owner and status. I triaged with the team and we cleared every blocker before launch.</p>
+      <p>After launch, App Store analytics showed engagement and drop-off, and interviews explained why. We measured task success three ways:</p>
+      <ul class="c-points">
+        <li><b>Completion.</b> Did people finish what they set out to do?</li>
+        <li><b>Errors.</b> Where did they struggle?</li>
+        <li><b>Efficiency.</b> How long did key actions take?</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="c-ch c-ch--wide" id="designs" data-title="Final designs" data-blob-at="0" data-blob-side="corner" data-sc-act="flow">
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 10</p>
+      <h2>Onboarding, AI trips and the travel shop</h2>
+      <div class="c-cols">
+        <p class="lead">The AI builds an itinerary from almost anything: social posts, blog links, video clips, images or plain text.</p>
+        <p>Your profile holds your trips, saved experiences and your travel shop, a Stripe-powered storefront where others can buy your itineraries.</p>
+      </div>
+    </div>
+    <div class="c-gallery">
+      <figure class="shot" data-sc-parallax="-0.5"><img src="https://emikobayashi.com/wp-content/uploads/2021/11/Screenshot-2025-12-14-at-10.18.29-PM-1024x558.png" width="1024" height="558" alt="Tripmix onboarding screens" loading="lazy"></figure>
+      <figure class="shot" data-sc-parallax="-1.1"><img src="https://emikobayashi.com/wp-content/uploads/2021/11/Screenshot-2025-12-14-at-10.15.23-PM-1024x696.png" width="1024" height="696" alt="Creating an itinerary with AI" loading="lazy"></figure>
+      <figure class="shot" data-sc-parallax="-0.5"><img src="https://emikobayashi.com/wp-content/uploads/2025/11/Travel-Shop-1024x607.png" width="1024" height="607" alt="The Tripmix travel shop" loading="lazy"></figure>
+    </div>
+    <div class="c-videos">
+      <div class="c-video" data-yt="P9s1GLdhChM" data-label="Tripmix AI feature"></div>
+      <div class="c-video" data-yt="9WNBFJqH_Yg" data-label="Tripmix profile"></div>
+    </div>
+  </section>
+
+  <section class="c-ch c-ch--wide" id="cards" data-title="UI improvements" data-blob-at="1" data-blob-side="corner">
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 11</p>
+      <h2>Clearer trip cards</h2>
+      <p class="lead">Prices sat on both sides of the cards, icons were confusing and the avatar was often missing. The fix: the avatar always shows, and plain public and private tags replace the icons.</p>
+    </div>
+    <div class="tm-cards">
+      <figure class="tm-cards__set" data-sc-in>
+        <p class="lbl__kind">Before</p>
+        <div class="tm-cards__row">
+          <div class="shot"><img src="https://emikobayashi.com/wp-content/uploads/2021/11/Tripmix-1-300x188.jpg" width="300" height="188" alt="Old trip card with a confusing globe icon and no avatar" loading="lazy"></div>
+          <div class="shot"><img src="https://emikobayashi.com/wp-content/uploads/2021/11/Tripmix-2-300x196.jpg" width="300" height="196" alt="Old trip card with a shop icon instead of the avatar" loading="lazy"></div>
+          <div class="shot"><img src="https://emikobayashi.com/wp-content/uploads/2021/11/Tripmix-3-234x300.jpg" width="234" height="300" alt="Old trip card with a confusing bag icon" loading="lazy"></div>
+        </div>
+        <figcaption>A globe icon, a shop icon in place of the avatar, and a bag icon.</figcaption>
+      </figure>
+      <figure class="tm-cards__set tm-cards__set--after" data-sc-in>
+        <p class="lbl__kind">After</p>
+        <div class="tm-cards__row">
+          <div class="shot"><img src="https://emikobayashi.com/wp-content/uploads/2021/11/Tripmix-4-704x1024.jpg" width="704" height="1024" alt="Redesigned trip cards with avatars and public or private tags" loading="lazy"></div>
+          <div class="shot"><img src="https://emikobayashi.com/wp-content/uploads/2021/11/Tripmix-5-235x300.jpg" width="235" height="300" alt="Redesigned trip card detail" loading="lazy"></div>
+        </div>
+        <figcaption>The avatar is always there, with public and private tags instead of icons.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <footer class="c-close" data-blob-at="3" data-blob-side="corner">
+    <div class="c-next">
+      <a class="c-next__link" href="case-kingcounty.html"><span>Next case study</span><b>King County</b></a>
+      <div class="c-close__ask">
+        <a class="btn" href="index.html#contact">Email Emi</a>
+        <p>Want to talk about this work or a role on your team? Tripmix is live at <a class="link" href="https://www.gettripmix.app">gettripmix.app</a>.</p>
+      </div>
+    </div>
+    <div class="c-foot"><span>Emi Kobayashi · Product designer</span><a href="index.html#work">All work</a></div>
+  </footer>
+
+</main>
+
+<script src="scrollcraft.js"></script>
+<script src="blob.js?v=16"></script>
+<script src="cursor.js?v=4"></script>
+<script src="case.js?v=3"></script>
+</body>
+</html>

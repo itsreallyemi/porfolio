@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NFL Fantasy · Emi Kobayashi</title>
+<meta name="description" content="How Emi Kobayashi built the media and engagement system for an exclusive fantasy football league, from static graphics to an AI broadcast pipeline.">
+<link rel="icon" href="https://emikobayashi.com/wp-content/uploads/2025/12/EK-Logo-scaled.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800;900&display=swap">
+<link rel="stylesheet" href="scrollcraft.css?v=3">
+<link rel="stylesheet" href="site.css?v=10">
+<link rel="stylesheet" href="case.css?v=7">
+<script>
+  /* ?motion=reduce forces the reduced-motion path for testing. */
+  (function () {
+    if (/[?&]motion=reduce\b/.test(location.search)) {
+      var mm = window.matchMedia.bind(window);
+      window.matchMedia = function (q) { return /prefers-reduced-motion:\s*reduce/.test(q) ? { matches: true, media: q, addEventListener: function () {}, addListener: function () {} } : mm(q); };
+    }
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('rm');
+  })();
+</script>
+</head>
+<body>
+
+<svg class="blob" viewBox="0 0 1400 770" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><g class="blob__back"><path/></g><g class="blob__front"><path/></g></svg>
+<div class="sc-grain" aria-hidden="true"></div>
+
+<header class="bar" id="bar">
+  <a class="bar__mark" href="index.html" aria-label="Emi Kobayashi, all work">
+    <img src="https://emikobayashi.com/wp-content/uploads/2025/12/EK-Logo-scaled.png" width="64" height="40" alt="">
+    <span class="bar__name">Emi Kobayashi</span>
+  </a>
+  <p class="bar__now cs-now" aria-live="polite"><span id="folio-num">NFL Fantasy</span> · <b id="folio-title">Case study</b></p>
+  <nav class="cs-nav" aria-label="Case study">
+    <a class="cs-nav__all" href="index.html#work">All work</a>
+    <a class="btn btn--small cs-nav__cta" href="index.html#contact">Email Emi</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="c-hero" data-blob-at="1" data-blob-side="left">
+    <div class="c-hero__media"><div data-sc-tilt="4"><figure class="shot"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/MM-2-1024x683.jpg" width="1024" height="683" alt="The NFL Fantasy league site on a laptop" fetchpriority="high"></figure></div></div>
+    <div class="c-hero__copy">
+      <p class="lbl__kind">Case study · UX design · Video production · Web design</p>
+      <h1>NFL Fantasy</h1>
+      <p class="c-deck">The media and engagement system for an exclusive fantasy football league, grown from static graphics into an AI broadcast pipeline.</p>
+      <dl class="c-meta">
+        <div><dt>Role</dt><dd>Producer, designer and developer</dd></div>
+        <div><dt>Since</dt><dd>2017, nine seasons</dd></div>
+        <div><dt>Built on</dt><dd>ESPN Fantasy, Discord</dd></div>
+        <div><dt>Audience</dt><dd>Managers, insiders and fans</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="c-out" id="outcomes" data-title="Outcomes" data-blob-at="3" data-blob-side="corner">
+    <div class="c-copy">
+      <p class="c-num">Section 1</p>
+      <h2>A whole season, zero misses</h2>
+      <p class="lead">The audience called it the most innovative content they'd seen for a fantasy league, and ESPN and the NFL borrowed from it, adding an OP position and a playoff structure.</p>
+    </div>
+    <dl class="c-nums" data-sc-in data-sc-stagger="70">
+      <div><dt>missed deadlines across a multi-month season</dt><dd><span data-sc-count="0 0">0</span></dd></div>
+      <div><dt>hours or less from final whistle to published episode</dt><dd>&lt;<span data-sc-count="0 12">12</span></dd></div>
+      <div><dt>consecutive seasons retained by the commissioner</dt><dd><span data-sc-count="0 9">9</span></dd></div>
+      <div><dt>growth in the league's fan base</dt><dd><span data-sc-count="0 3">3</span>×</dd></div>
+      <div><dt>faster production on the AI pipeline</dt><dd><span data-sc-count="0 3">3</span>×</dd></div>
+      <div><dt>end-to-end pipeline, from live league data to a published broadcast</dt><dd><span data-sc-count="0 1">1</span></dd></div>
+    </dl>
+  </section>
+
+  <section class="c-ch c-ch--flip" id="overview" data-title="Built like an e-Sport" data-blob-at="2" data-blob-side="right" data-sc-act="flow">
+    <figure class="c-media"><div class="shot" data-sc-parallax="-0.8"><img src="https://emikobayashi.com/wp-content/uploads/2018/09/BOFF-Portfolio-1-1024x596.jpg" width="1024" height="596" alt="NFL Fantasy overview slide" loading="lazy"></div></figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 2</p>
+      <h2>A fantasy league built like an e-Sport</h2>
+      <p class="lead">From September to February, about 46 million fans play fantasy football. This league is a sandbox for testing new formats, media models and ways to engage an audience.</p>
+      <p>Since 2017 I've designed and evolved its complete media and engagement system, with live reporting of standings and scores so spectators can take part.</p>
+      <ul class="c-points">
+        <li>Pushes fantasy football toward an e-Sports experience</li>
+        <li>Grew from static graphics to an AI broadcast pipeline</li>
+        <li>The league runs on ESPN Fantasy</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="c-ch" id="problem" data-title="The problem" data-blob-at="3" data-blob-side="left" data-sc-act="flow">
+    <figure class="c-media"><div class="shot" data-sc-parallax="-0.8"><img src="https://emikobayashi.com/wp-content/uploads/2026/01/Screenshot-2026-06-21-at-1.41.22-AM-1024x424.png" width="1024" height="424" alt="Problem summary slide for NFL Fantasy" loading="lazy"></div></figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 3</p>
+      <h2>Passion with nothing to watch</h2>
+      <p class="lead">Fantasy football is transactional, isolated and hard to follow if you're not playing.</p>
+      <ul class="c-points">
+        <li><b>No spectator layer.</b> Fans without a team have nothing to watch, follow or bet on.</li>
+        <li><b>Flat coverage.</b> The majors give play-by-play stats, not a broadcast-quality story for one league.</li>
+        <li><b>No e-Sports feel.</b> None of the live drama and community that make e-Sports worth watching.</li>
+        <li><b>Uninspiring prizes.</b> Modest cash that doesn't create excitement or wider participation.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="c-ch c-ch--flip" id="users" data-title="Three customers" data-blob-at="4" data-blob-side="right" data-sc-act="flow">
+    <figure class="c-media"><div class="shot" data-sc-parallax="-0.8"><img src="https://emikobayashi.com/wp-content/uploads/2026/01/Screenshot-2026-06-21-at-1.43.44-AM-1024x561.png" width="1024" height="561" alt="The three NFL Fantasy customer groups" loading="lazy"></div></figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 4</p>
+      <h2>Three customers, one game</h2>
+      <p class="lead">Spectators are the largest group and the key to the e-Sports model: they can sponsor a team and win real prizes.</p>
+      <ul class="c-points">
+        <li><b>The General Manager.</b> 30 active managers who run rosters weekly and want real-time stats and standings.</li>
+        <li><b>The Industry Insider.</b> 15 retired players, agents and producers invested in gamifying beyond the games.</li>
+        <li><b>The Fan in the Stands.</b> 200 spectators who want in without managing a team, through trivia, predictions and sponsorship.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="c-ch" id="seasons" data-title="Every season a test" data-blob-at="5" data-blob-side="left" data-sc-act="flow">
+    <figure class="c-media c-media--pair">
+      <div class="shot" data-sc-parallax="-0.6"><img src="https://emikobayashi.com/wp-content/uploads/2026/01/Screenshot-2026-06-21-at-1.45.27-AM-1024x672.png" width="1024" height="672" alt="How the production evolved across seasons" loading="lazy"></div>
+      <div class="shot" data-sc-parallax="-1.4"><img src="https://emikobayashi.com/wp-content/uploads/2018/09/BofFF-1024x642.png" width="1024" height="642" alt="Engagement touch points: portal, weekly videos, trivia and prizes" loading="lazy"></div>
+    </figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 5</p>
+      <h2>Every season is a research cycle</h2>
+      <p class="lead">No two seasons are the same. I treat each one as a real-world usability test and refine the format on engagement signals.</p>
+      <ol class="c-steps">
+        <li><span><b>Animation era.</b> Motion graphics and animated highlights brought scores to life.</span></li>
+        <li><span><b>Live broadcaster.</b> An on-camera anchor delivered weekly standings like a real sports desk.</span></li>
+        <li><span><b>AI-driven production.</b> Scripting, voiceover and editing on an AI pipeline, the fastest turnaround yet.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="c-ch c-ch--flip" id="stakes" data-title="Real stakes" data-blob-at="0" data-blob-side="right">
+    <figure class="c-media"><div class="c-video" data-yt="C3MAbFhggz4" data-label="NFL Fantasy league video"></div></figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 6</p>
+      <h2>Engaged all week, playing for real stakes</h2>
+      <p class="lead">The league isn't just game day. Trivia and prediction games run all week to pull spectators off the sidelines between broadcasts.</p>
+      <ul class="c-points">
+        <li><b>Vacations.</b> Curated travel and experience packages.</li>
+        <li><b>Cars.</b> Marquee rewards that raise the stakes.</li>
+        <li><b>Houses.</b> Grand prizes that drive serious participation.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="c-ch c-ch--text" id="broadcasts" data-title="Broadcasts" data-blob-at="1" data-blob-side="corner">
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 7</p>
+      <h2>Weekly broadcasts, out by Tuesday</h2>
+      <div class="c-cols">
+        <p class="lead">I've produced weekly league-news broadcasts since 2017, measuring entertainment value and engagement each season. Views climbed every year as quality improved.</p>
+        <div>
+          <ul class="c-points">
+            <li>Monday night is the last game, so branched scripting got broadcasts out first thing Tuesday</li>
+            <li>The AI pipeline cut the crew to a writer and me as editor: 3× faster, no hand-off delays</li>
+            <li>2025: a Best of NFL Fantasy weekly recap</li>
+          </ul>
+        </div>
+      </div>
+      <div class="c-videos">
+        <div class="c-video" data-yt="Ojbh_itqkDw" data-label="NFL Fantasy broadcast one"></div>
+        <div class="c-video" data-yt="ASiUk9t6PDQ" data-label="NFL Fantasy broadcast two"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="c-ch" id="portal" data-title="The portal" data-blob-at="2" data-blob-side="left" data-sc-act="flow">
+    <figure class="c-media c-media--pair">
+      <div class="shot" data-sc-parallax="-0.6"><img src="https://emikobayashi.com/wp-content/uploads/2018/09/The-portal-1024x576.jpg" width="1024" height="576" alt="The NFL Fantasy league portal" loading="lazy"></div>
+      <div class="shot" data-sc-parallax="-1.4"><img src="https://emikobayashi.com/wp-content/uploads/2018/09/Metaverse-1024x582.png" width="1024" height="582" alt="Metaverse engagement concept for the league" loading="lazy"></div>
+      <figcaption>The portal, and a metaverse engagement concept.</figcaption>
+    </figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 8</p>
+      <h2>The portal</h2>
+      <p class="lead">Added in 2021 as the league's engagement hub, with real-time standings and stats beyond what the ESPN app shows.</p>
+      <ul class="c-points">
+        <li>A Discord community built into the site</li>
+        <li>In-league currency to trade players, a strategic meta-game</li>
+        <li>Home of the trivia and prediction games, rules, schedules and a merch store</li>
+        <li>Beta tested with league members, then updated weekly through the season</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="c-close" data-blob-at="4" data-blob-side="corner">
+    <div class="c-next">
+      <a class="c-next__link" href="case-docusign.html"><span>Next case study</span><b>DocuSign</b></a>
+      <div class="c-close__ask">
+        <a class="btn" href="index.html#contact">Email Emi</a>
+        <p>Want to talk about this work or a role on your team?</p>
+      </div>
+    </div>
+    <div class="c-foot"><span>Emi Kobayashi · Product designer</span><a href="index.html#work">All work</a></div>
+  </footer>
+
+</main>
+
+<script src="scrollcraft.js"></script>
+<script src="blob.js?v=16"></script>
+<script src="cursor.js?v=4"></script>
+<script src="case.js?v=3"></script>
+</body>
+</html>

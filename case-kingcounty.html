@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>King County · Emi Kobayashi</title>
+<meta name="description" content="How Emi Kobayashi built LIQUID, the design system behind 20,000+ King County web pages across 60+ agencies.">
+<link rel="icon" href="https://emikobayashi.com/wp-content/uploads/2025/12/EK-Logo-scaled.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800;900&display=swap">
+<link rel="stylesheet" href="scrollcraft.css?v=3">
+<link rel="stylesheet" href="site.css?v=10">
+<link rel="stylesheet" href="case.css?v=7">
+<script>
+  /* ?motion=reduce forces the reduced-motion path for testing. */
+  (function () {
+    if (/[?&]motion=reduce\b/.test(location.search)) {
+      var mm = window.matchMedia.bind(window);
+      window.matchMedia = function (q) { return /prefers-reduced-motion:\s*reduce/.test(q) ? { matches: true, media: q, addEventListener: function () {}, addListener: function () {} } : mm(q); };
+    }
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('rm');
+  })();
+</script>
+</head>
+<body>
+
+<svg class="blob" viewBox="0 0 1400 770" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><g class="blob__back"><path/></g><g class="blob__front"><path/></g></svg>
+<div class="sc-grain" aria-hidden="true"></div>
+
+<header class="bar" id="bar">
+  <a class="bar__mark" href="index.html" aria-label="Emi Kobayashi, all work">
+    <img src="https://emikobayashi.com/wp-content/uploads/2025/12/EK-Logo-scaled.png" width="64" height="40" alt="">
+    <span class="bar__name">Emi Kobayashi</span>
+  </a>
+  <p class="bar__now cs-now" aria-live="polite"><span id="folio-num">King County</span> · <b id="folio-title">Case study</b></p>
+  <nav class="cs-nav" aria-label="Case study">
+    <a class="cs-nav__all" href="index.html#work">All work</a>
+    <a class="btn btn--small cs-nav__cta" href="index.html#contact">Email Emi</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="c-hero" data-blob-at="0" data-blob-side="left">
+    <div class="c-hero__media"><div data-sc-tilt="4"><figure class="shot"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/KC-Mobile-Responsive-1024x683.jpeg" width="1024" height="683" alt="The redesigned King County site on a phone" fetchpriority="high"></figure></div></div>
+    <div class="c-hero__copy">
+      <p class="lbl__kind">Case study · UX design · Design system</p>
+      <h1>King County</h1>
+      <p class="c-deck">One design system, LIQUID, behind 20,000+ county web pages across 60+ agencies.</p>
+      <dl class="c-meta">
+        <div><dt>Role</dt><dd>UX designer, design system lead</dd></div>
+        <div><dt>When</dt><dd>Aug 2021 to Jan 2023</dd></div>
+        <div><dt>Tools</dt><dd>Figma, Sketch, Sitecore, Otter.ai</dd></div>
+        <div><dt>Scale</dt><dd>18 departments, 2.2 million residents</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="c-out" id="outcomes" data-title="Outcomes" data-blob-at="3" data-blob-side="corner">
+    <div class="c-copy">
+      <p class="c-num">Section 1</p>
+      <h2>Measurable outcomes</h2>
+      <p class="lead">Standard pages are less overwhelming, and departments can now build their own specialised sections, so residents can do more online.</p>
+    </div>
+    <dl class="c-nums" data-sc-in data-sc-stagger="70">
+      <div><dt>faster page updates across agencies, through a standardised 200-component design system</dt><dd><span data-sc-count="0 3">3</span>×</dd></div>
+      <div><dt>customers a year now file protection orders online, with no travel</dt><dd><span data-sc-count="0 4,000">4,000</span>+</dd></div>
+      <div><dt>estimated cost savings for the county, from 1,000+ staff hours saved per agency</dt><dd>~$<span data-sc-count="0 1">1</span>M</dd></div>
+      <div><dt>core languages supported by ADA-compliant, translation-ready components</dt><dd><span data-sc-count="0 6">6</span></dd></div>
+      <div><dt>agencies brought to one consistent digital presence</dt><dd><span data-sc-count="0 60">60</span>+</dd></div>
+      <div><dt>faster to ship and verify components with the side-by-side QA workflow</dt><dd><span data-sc-count="0 2">2</span>×</dd></div>
+    </dl>
+  </section>
+
+  <section class="c-ch c-ch--text" id="overview" data-title="Overview" data-blob-at="1" data-blob-side="corner">
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 2</p>
+      <h2>A county with no shared standard</h2>
+      <div class="c-cols">
+        <div class="c-copy">
+          <p class="lead">King County has 18 departments, including Public Health, Metro Transit and Natural Resources and Parks, serving 2.2 million residents.</p>
+          <p>The county set out to modernise and unify every agency's web presence, so residents get one usable, accessible and consistent experience.</p>
+        </div>
+        <div class="c-copy">
+          <h3>My role</h3>
+          <p>I created the unified design system for 20,000+ pages. I built the UI kit in Figma and Sketch so assets could be shared and scaled, worked with developers on implementation, and ran training and wrote material to guide each department through the redesign.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="c-ch c-ch--flip" id="before-after" data-title="Before and after" data-blob-at="2" data-blob-side="right">
+    <div class="c-media">
+      <div class="compare">
+        <img src="https://emikobayashi.com/wp-content/uploads/2018/03/KC-4.png" width="912" height="1348" alt="The legacy King County homepage: dense link lists, a COVID-19 notice box and a brown menu bar.">
+        <div class="compare__after"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/KC-4.png" width="912" height="1348" alt="The redesigned homepage: a full-width parks photograph, clear search, and tidy cards for Initiatives, Metro, Property and Elections."></div>
+        <span class="compare__bar"></span>
+        <span class="compare__knob" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6-6 6 6 6M15 6l6 6-6 6"/></svg></span>
+        <span class="compare__tag compare__tag--before">Before</span>
+        <span class="compare__tag compare__tag--after">After</span>
+        <input type="range" min="0" max="100" value="50" aria-label="Drag to compare the legacy site with the redesign">
+      </div>
+    </div>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 3</p>
+      <h2>Before and after</h2>
+      <p class="lead">Drag across the homepage to compare the legacy site with the redesign.</p>
+      <p>A heuristic evaluation of the old site found no unified design standard and a dated look and feel.</p>
+      <ul class="c-points">
+        <li>Global alerts so disruptive that people left or got frustrated</li>
+        <li>No standard way to find each agency's contact information</li>
+        <li>Jargon that stopped people finishing their tasks</li>
+        <li>A maze of an information architecture, with a confusing header menu</li>
+      </ul>
+      <p><a class="link" href="https://www.youtube.com/watch?v=4vq4BjmwYlY">Watch the redesign walkthrough on YouTube</a></p>
+    </div>
+  </section>
+
+  <section class="c-ch" id="users" data-title="Two kinds of user" data-blob-at="3" data-blob-side="left" data-sc-act="flow">
+    <figure class="c-media"><div class="shot" data-sc-parallax="-0.8"><img src="https://emikobayashi.com/wp-content/uploads/2023/01/Screenshot-2026-06-08-at-1.02.18-PM-768x848.png" width="768" height="848" alt="King County customer groups: the public, content publishers, content creators and content managers, with the tasks each one does" loading="lazy"></div></figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 4</p>
+      <h2>Two kinds of user</h2>
+      <p class="lead">The public site and the internal design system served two different groups.</p>
+      <ul class="c-points">
+        <li><b>The public.</b> People completing tasks, getting documents, paying fees and finding information.</li>
+        <li><b>Content teams.</b> Publishers, producers and managers who create and update pages: the people the design system was really for.</li>
+      </ul>
+      <p>My main customers were those editors, but every decision still had to be best for residents using the site to improve their lives.</p>
+    </div>
+  </section>
+
+  <section class="c-ch c-ch--flip" id="listening" data-title="Listening first" data-blob-at="4" data-blob-side="right" data-sc-act="flow">
+    <figure class="c-media"><div class="shot" data-sc-parallax="-0.8"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/KC-3-1024x895.png" width="1024" height="895" alt="Experience map for one agency, plotting moments from frustrated to delighted" loading="lazy"></div></figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 5</p>
+      <h2>Listening first</h2>
+      <p class="lead">18 department interviews, each with 3 to 5 subject-matter experts, consolidated into an experience map.</p>
+      <p>Otter.ai transcription cut synthesis from days to hours. I coded what people said by energy, from "delighted" and "supported" to "disengaged" and "frustrated", and those signals placed each component on the effort and impact chart.</p>
+    </div>
+  </section>
+
+  <section class="c-ch" id="building" data-title="What to build first" data-blob-at="5" data-blob-side="left" data-sc-act="flow">
+    <figure class="c-media"><div class="shot" data-sc-parallax="-0.8"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/KC-2-1024x605.png" width="1024" height="605" alt="Design system process map with content structure flows and annotated sticky notes" loading="lazy"></div></figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 6</p>
+      <h2>What to build first</h2>
+      <p class="lead">Every component went on an impact and effort chart, scored from real customer data. High impact and low effort shipped first.</p>
+      <ol class="c-steps">
+        <li><span>Surface pain points with the agency.</span></li>
+        <li><span>Find the opportunity for a new component.</span></li>
+        <li><span>Prototype it in high fidelity.</span></li>
+        <li><span>Build it into the UI kit, then document when to use it, when not to, its states and best practice.</span></li>
+        <li><span>Write specs for developers and guidance for content producers.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="c-ch c-ch--flip" id="structure" data-title="Their mental model" data-blob-at="0" data-blob-side="right" data-sc-act="flow">
+    <figure class="c-media"><div class="shot" data-sc-parallax="-0.8"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/KC-6-768x795.png" width="768" height="795" alt="Open card sort results grouping design system components into categories" loading="lazy"></div></figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 7</p>
+      <h2>Built around their mental model</h2>
+      <p class="lead">An open card sort with about 20 experts from each agency set the system's information architecture.</p>
+      <p>I wanted their mental models before assuming any categories. They sorted the components, I analysed the clustering, and the system became navigable by category, the way its customers think.</p>
+      <ul class="c-points"><li>50 components, each with 3 to 5 variants</li></ul>
+    </div>
+  </section>
+
+  <section class="c-ch" id="liquid" data-title="LIQUID" data-blob-at="1" data-blob-side="left" data-sc-act="flow">
+    <figure class="c-media"><div class="shot" data-sc-parallax="-0.8"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/KC-9-1024x578-1.jpg" width="1024" height="578" alt="A King County page built from LIQUID components: news, events and initiatives" loading="lazy"></div></figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 8</p>
+      <h2>LIQUID, built from itself</h2>
+      <p class="lead">With developers, I built the new components in Sitecore CMS, matched to the designs.</p>
+      <p>LIQUID became a living best-practice reference, built from the very components and style guides it documents, with templates and navigation, content and accessibility standards. I supported content producers through office hours, workshops and guidance.</p>
+    </div>
+  </section>
+
+  <section class="c-ch c-ch--flip" id="qa" data-title="Quality control" data-blob-at="2" data-blob-side="right" data-sc-act="flow">
+    <figure class="c-media"><div class="shot" data-sc-parallax="-0.8"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/KC-Assetn2-1024x484.png" width="1024" height="484" alt="Side-by-side review: the design file next to the Sitecore test build, with annotated QA feedback" loading="lazy"></div></figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 9</p>
+      <h2>Closing the gap with development</h2>
+      <p class="lead">My users lived in Sitecore all day, so I learned Sitecore myself.</p>
+      <p>Designers had been giving developers text-only feedback with no context. Building the pages I designed let me compare them side by side with the templates, so I created a QA workflow, taught it to the other designers, and we shipped and verified components twice as fast.</p>
+    </div>
+  </section>
+
+  <footer class="c-close" data-blob-at="4" data-blob-side="corner">
+    <div class="c-next">
+      <a class="c-next__link" href="case-nfl.html"><span>Next case study</span><b>NFL Fantasy</b></a>
+      <div class="c-close__ask">
+        <a class="btn" href="index.html#contact">Email Emi</a>
+        <p>Want to talk about this work or a role on your team?</p>
+      </div>
+    </div>
+    <div class="c-foot"><span>Emi Kobayashi · Product designer</span><a href="index.html#work">All work</a></div>
+  </footer>
+
+</main>
+
+<script src="scrollcraft.js"></script>
+<script src="blob.js?v=16"></script>
+<script src="cursor.js?v=4"></script>
+<script src="case.js?v=3"></script>
+</body>
+</html>

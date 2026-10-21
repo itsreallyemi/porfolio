@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>University of Washington · Emi Kobayashi</title>
+<meta name="description" content="How Emi Kobayashi designed and built a choir platform that kept the University of Washington's choir teaching and performing during COVID-19.">
+<link rel="icon" href="https://emikobayashi.com/wp-content/uploads/2025/12/EK-Logo-scaled.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800;900&display=swap">
+<link rel="stylesheet" href="scrollcraft.css?v=3">
+<link rel="stylesheet" href="site.css?v=10">
+<link rel="stylesheet" href="case.css?v=7">
+<script>
+  /* ?motion=reduce forces the reduced-motion path for testing. */
+  (function () {
+    if (/[?&]motion=reduce\b/.test(location.search)) {
+      var mm = window.matchMedia.bind(window);
+      window.matchMedia = function (q) { return /prefers-reduced-motion:\s*reduce/.test(q) ? { matches: true, media: q, addEventListener: function () {}, addListener: function () {} } : mm(q); };
+    }
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('rm');
+  })();
+</script>
+</head>
+<body>
+
+<svg class="blob" viewBox="0 0 1400 770" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><g class="blob__back"><path/></g><g class="blob__front"><path/></g></svg>
+<div class="sc-grain" aria-hidden="true"></div>
+
+<header class="bar" id="bar">
+  <a class="bar__mark" href="index.html" aria-label="Emi Kobayashi, all work">
+    <img src="https://emikobayashi.com/wp-content/uploads/2025/12/EK-Logo-scaled.png" width="64" height="40" alt="">
+    <span class="bar__name">Emi Kobayashi</span>
+  </a>
+  <p class="bar__now cs-now" aria-live="polite"><span id="folio-num">University of Washington</span> · <b id="folio-title">Case study</b></p>
+  <nav class="cs-nav" aria-label="Case study">
+    <a class="cs-nav__all" href="index.html#work">All work</a>
+    <a class="btn btn--small cs-nav__cta" href="index.html#contact">Email Emi</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="c-hero" data-blob-at="0" data-blob-side="left">
+    <div class="c-hero__media"><div data-sc-tilt="4"><figure class="shot"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/uw-1024x682.jpg" width="1024" height="682" alt="The University of Washington choir platform on a laptop" fetchpriority="high"></figure></div></div>
+    <div class="c-hero__copy">
+      <p class="lbl__kind">Case study · UX design · Web design</p>
+      <h1 class="c-hero__title--long">University of Washington</h1>
+      <p class="c-deck">A choir platform that kept classes and concerts going during COVID-19, safely and online.</p>
+      <dl class="c-meta">
+        <div><dt>Role</dt><dd>Product designer, web developer and video editor</dd></div>
+        <div><dt>Client</dt><dd>UW choir department</dd></div>
+        <div><dt>Team</dt><dd>Business analysts, developers, designers</dd></div>
+        <div><dt>Result</dt><dd>One of the department's most successful programs</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="c-ch c-ch--text" id="outcome" data-title="Outcome" data-blob-at="5" data-blob-side="corner">
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 1</p>
+      <h2>One of the department's most successful programs</h2>
+      <p class="lead">The platform kept the choir teaching and performing through COVID-19, and the program became one of the most successful in UW's music department, measured by the share of returning students.</p>
+    </div>
+  </section>
+
+  <section class="c-ch c-ch--flip" id="overview" data-title="Overview" data-blob-at="1" data-blob-side="right" data-sc-act="flow">
+    <figure class="c-media"><div class="shot" data-sc-parallax="-0.8"><img src="https://emikobayashi.com/wp-content/uploads/2021/10/UW-5-1024x545.png" width="1024" height="545" alt="University of Washington choir platform design" loading="lazy"></div></figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 2</p>
+      <h2>Keeping a choir singing</h2>
+      <p class="lead">During the pandemic, UW's arts departments needed ways to teach within health restrictions. The choir needed a home for its weekly sessions.</p>
+      <ul class="c-points">
+        <li>Share audio files and instructions with students</li>
+        <li>Let students upload their MP3 and MP4 recordings</li>
+        <li>Broadcast the end-of-quarter concerts</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="c-ch" id="goals" data-title="Overall goals" data-blob-at="2" data-blob-side="left" data-sc-act="flow">
+    <figure class="c-media"><div class="shot" data-sc-parallax="-0.8"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/UW-3-1024x587.png" width="1024" height="587" alt="The virtual concert stage" loading="lazy"></div></figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 3</p>
+      <h2>As seamless as possible</h2>
+      <p class="lead">The professor's priority: students reach their audio files and hop into their Zoom class without friction.</p>
+      <ul class="c-points">
+        <li><b>Easy access to class.</b> A large button on the landing page takes students straight to class.</li>
+        <li><b>Class organisation.</b> Menus that behave like tabs, so moving around feels seamless.</li>
+        <li><b>File uploads.</b> A way to upload large audio and video files, the part that needed the most change.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="c-ch c-ch--text" id="process" data-title="Process" data-blob-at="3" data-blob-side="corner">
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 4</p>
+      <h2>Define, ideate, build, test</h2>
+      <div class="c-cols">
+        <ol class="c-steps">
+          <li><span><b>Define.</b> Three core goals: share audio and instructions, easy student uploads, and live end-of-quarter concerts, all fully virtual.</span></li>
+          <li><span><b>Ideate.</b> Agile brainstorming with analysts, developers and designers on flows and approaches, including AI to organise large volumes of files.</span></li>
+        </ol>
+        <ol class="c-steps" data-start="3">
+          <li><span><b>Implement.</b> Iterative design, code and feedback. Uploads, naming and sorting were reworked, and AI categorised files to keep each class organised.</span></li>
+          <li><span><b>Test.</b> Technical testing plus user testing with real students, which led to a better upload process and overall usability.</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="c-ch c-ch--flip" id="sketch" data-title="Early sketch" data-blob-at="4" data-blob-side="right" data-sc-act="flow">
+    <figure class="c-media"><div class="shot" data-sc-parallax="-0.8"><img src="https://emikobayashi.com/wp-content/uploads/2021/10/Screenshot-2025-12-14-at-10.09.30-PM.png" width="1002" height="1528" alt="Early mock sketch of the choir platform" loading="lazy"></div></figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 5</p>
+      <h2>An early mock sketch</h2>
+      <p class="lead">The first layout put the class button front and centre, with tabs for everything else.</p>
+    </div>
+  </section>
+
+  <section class="c-ch" id="portal" data-title="Class portal" data-blob-at="5" data-blob-side="left">
+    <figure class="c-media"><div class="c-video" data-yt="cXIjJjnA40g" data-label="Class portal walkthrough"></div></figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 6</p>
+      <h2>The class portal</h2>
+      <p class="lead">We iterated on the site in a cross-functional team, checking back with real users for feedback at every step.</p>
+    </div>
+  </section>
+
+  <section class="c-ch c-ch--flip" id="broadcasts" data-title="Simulated broadcasts" data-blob-at="0" data-blob-side="right">
+    <figure class="c-media"><div class="c-video" data-yt="i2qLtit3J1M" data-label="Simulated concert broadcast"></div></figure>
+    <div class="c-copy" data-sc-in data-sc-stagger="60">
+      <p class="c-num">Section 7</p>
+      <h2>Concerts, without the hall</h2>
+      <ul class="c-points">
+        <li>After the quarter, submitted videos and audio go to an editing team to become production-ready concert clips.</li>
+        <li>Simulated broadcasts reach far more people and don't depend on location.</li>
+        <li>They bring a production that would happen in person into a virtual space.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="c-close" data-blob-at="1" data-blob-side="corner">
+    <div class="c-next">
+      <a class="c-next__link" href="case-3d.html"><span>Next case study</span><b>3D Work</b></a>
+      <div class="c-close__ask">
+        <a class="btn" href="index.html#contact">Email Emi</a>
+        <p>Want to talk about this work or a role on your team?</p>
+      </div>
+    </div>
+    <div class="c-foot"><span>Emi Kobayashi · Product designer</span><a href="index.html#work">All work</a></div>
+  </footer>
+
+</main>
+
+<script src="scrollcraft.js"></script>
+<script src="blob.js?v=16"></script>
+<script src="cursor.js?v=4"></script>
+<script src="case.js?v=3"></script>
+</body>
+</html>
