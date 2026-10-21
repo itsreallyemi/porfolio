@@ -23,7 +23,7 @@
   };
   // The live theme's six states and colours, in its order.
   var STATES = [
-    { d: 'a', sx: 1.3, sy: 1.8, r: 70,  tx: 0,    ty: -100, fill: '#ff7563' },
+    { d: 'a', sx: 1.3, sy: 1.8, r: 70,  tx: 0,    ty: -100, fill: '#f07a3a' },
     { d: 'b', sx: 1.9, sy: 1.0, r: 0,   tx: 0,    ty: 100,  fill: '#f54da2' },
     { d: 'c', sx: 1.9, sy: 1.1, r: 40,  tx: -100, ty: 200,  fill: '#19bb73' },
     { d: 'a', sx: 1.5, sy: 2.0, r: -20, tx: 0,    ty: -50,  fill: '#64bffe' },
@@ -47,7 +47,7 @@
 
   window.EKBlob = function (svg, opts) {
     opts = opts || {};
-    var ground = hex(opts.ground || '#3b2182');
+    var ground = hex(opts.ground || '#e8e8e6');
     var front = svg.querySelector('.blob__front'), back = svg.querySelector('.blob__back');
     var fp = front.querySelector('path'), bp = back.querySelector('path');
     var rm = !!opts.reduce;

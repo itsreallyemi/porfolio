@@ -8,9 +8,9 @@
 <link rel="icon" href="https://emikobayashi.com/wp-content/uploads/2025/12/EK-Logo-scaled.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Mulish:wght@400;600;700;800;900&display=swap">
 <link rel="stylesheet" href="scrollcraft.css?v=3">
-<link rel="stylesheet" href="site.css?v=11">
+<link rel="stylesheet" href="site.css?v=13">
 <script>
   /* Test hook, not a feature: ?motion=reduce forces the reduced-motion path in
      browsers that cannot emulate the media query. Must run before the engine. */
@@ -53,7 +53,7 @@
   .proj__text { margin: 0; color: var(--sc-ink); font: 600 var(--sc-t-lg)/1.5 var(--sc-font-text); max-width: 34ch; text-wrap: pretty; }
   .proj__points { margin: 0; padding: 0; list-style: none; display: grid; gap: var(--sc-3); }
   .proj__points li { position: relative; padding-left: var(--sc-6); color: var(--sc-ink-soft); font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.3rem); line-height: 1.45; }
-  .proj__points li::before { content: ""; position: absolute; left: 0.2rem; top: 0.55em; width: 9px; height: 9px; border-radius: 50%; background: var(--ek-yellow); }
+  .proj__points li::before { content: ""; position: absolute; left: 0.2rem; top: 0.55em; width: 9px; height: 9px; border-radius: 0; background: var(--sc-accent); }
   .proj__points b { color: var(--sc-ink); font-weight: 800; }
   .proj__go { display: flex; align-items: center; gap: var(--sc-6); flex-wrap: wrap; margin-top: var(--sc-3); }
 
@@ -66,7 +66,7 @@
   /* Three images on one grid: the desktop homepage at the back, the
      components page overlapping its lower left, and the phone as a portrait
      card on the right. Shared radius and shadow; bottoms step down evenly. */
-  .scene > .shot { border-radius: 12px; }
+  .scene > .shot { border-radius: var(--ek-radius); }
   .scene__desktop { top: 2%; right: 0; width: 84%; aspect-ratio: 16 / 10; }
   .scene__desktop img { object-position: 50% 87%; }
   .scene__components { left: 0; bottom: 12%; width: 56%; aspect-ratio: 16 / 10; }
@@ -81,7 +81,7 @@
   .about__intro { margin: var(--sc-6) 0 0; font: 600 clamp(1.35rem, 1.1rem + 0.9vw, 1.95rem)/1.4 var(--sc-font-text); max-width: 32ch; }
   .about__nums { display: flex; gap: var(--sc-8); margin-top: var(--sc-7); }
   .about__nums div { display: grid; gap: var(--sc-1); }
-  .about__nums strong { font: 900 var(--sc-t-3xl)/1 var(--sc-font-display); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; color: var(--ek-yellow); }
+  .about__nums strong { font: 900 var(--sc-t-3xl)/1 var(--sc-font-display); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; color: var(--ek-mark); }
   .about__nums div > span { color: var(--sc-ink-soft); font-size: var(--sc-t-sm); }
   .principles { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sc-6); align-content: start; }
   .principles li { display: grid; grid-template-columns: 10rem 1fr; gap: var(--sc-4); padding-top: var(--sc-5); border-top: 1px solid var(--sc-hairline); }
@@ -96,7 +96,7 @@
   .resume__in { max-width: var(--sc-maxw); margin-inline: auto; }
   .resume__head { display: flex; align-items: end; justify-content: space-between; gap: var(--sc-5); flex-wrap: wrap; margin-bottom: var(--sc-7); }
   .resume h2 { margin: 0; font: 900 var(--sc-t-4xl)/0.92 var(--sc-font-display); letter-spacing: -0.04em; }
-  .paper { --sc-ink: #1C0F45; --sc-ink-soft: #4E4570; --sc-hairline: rgb(28 15 69 / 0.12); color: var(--sc-ink); background: #fff; border-radius: 14px; box-shadow: var(--sc-e3); }
+  .paper { --sc-ink: #161616; --sc-ink-soft: #4A4A47; --sc-hairline: rgb(0 0 0 / 0.12); color: var(--sc-ink); background: #fff; border-radius: var(--ek-radius); box-shadow: var(--sc-edge); }
   .paper .link { color: var(--sc-ink); }
   .ledger { margin: 0; padding: var(--sc-3) var(--sc-7); }
   .ledger ol { list-style: none; margin: 0; padding: 0; }
@@ -121,11 +121,11 @@
   .field label { font: 800 var(--sc-t-sm)/1 var(--sc-font-text); }
   .field input, .field textarea {
     font: 600 var(--sc-t-base)/1.4 var(--sc-font-text); color: var(--sc-ink);
-    padding: 0.85rem 0.95rem; border-radius: 6px; border: 1.5px solid rgb(28 15 69 / 0.22); background: #F4F1FB; caret-color: var(--sc-accent);
+    padding: 0.85rem 0.95rem; border-radius: 0; border: 1.5px solid rgb(0 0 0 / 0.18); background: #F2F2F0; caret-color: var(--sc-accent);
     transition: border-color 160ms var(--sc-ease-out), background-color 160ms var(--sc-ease-out);
   }
   .field textarea { min-height: 9rem; resize: vertical; }
-  .field input:focus, .field textarea:focus { background: #fff; border-color: #6B4BD6; }
+  .field input:focus, .field textarea:focus { background: #fff; border-color: var(--sc-accent); }
   .field [aria-invalid="true"] { border-color: #C2185B; }
   .form__row { grid-column: 1 / -1; display: flex; align-items: center; gap: var(--sc-6); flex-wrap: wrap; margin-top: var(--sc-2); }
   .form__status { margin: 0; font-size: var(--sc-t-sm); color: var(--sc-ink-soft); max-width: 44ch; }
@@ -224,22 +224,7 @@
   </section>
 
   <!-- 3 · The rest of the work, one screen each, alternating sides like the live site. -->
-  <section class="proj proj--flip" id="nfl" data-blob-at="2" data-blob-side="right" data-nav-for="work" data-sc-act="flow" aria-labelledby="nfl-t">
-    <div class="proj__media"><div class="proj__frame" data-sc-tilt="8"><figure class="shot" data-sc-parallax="-0.9"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/MM-2-1024x683.jpg" alt="NFL Fantasy league site on a laptop"></figure></div></div>
-    <div class="proj__copy" data-sc-in data-sc-stagger="60">
-      <p class="lbl__kind">UX design · Video production · Web design</p>
-      <h2 class="proj__title" id="nfl-t">NFL Fantasy</h2>
-      <p class="proj__text">The media and engagement system for an exclusive fantasy football league, from the platform to the broadcasts.</p>
-      <ul class="proj__points">
-        <li><b>Nine seasons</b>, since 2017</li>
-        <li>An AI broadcast pipeline, <b>3&times;</b> faster</li>
-        <li><b>Zero</b> missed deadlines all season</li>
-      </ul>
-      <div class="proj__go"><a class="btn" href="case-nfl.html">See case study</a></div>
-    </div>
-  </section>
-
-  <section class="proj" id="docusign" data-blob-at="3" data-blob-side="left" data-nav-for="work" data-sc-act="flow" aria-labelledby="ds-t">
+  <section class="proj proj--flip" id="docusign" data-blob-at="2" data-blob-side="right" data-nav-for="work" data-sc-act="flow" aria-labelledby="ds-t">
     <div class="proj__media"><div class="proj__frame" data-sc-tilt="8"><figure class="shot" data-sc-parallax="-0.9"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/DS-1024x683.png" alt="DocuSign mobile sign-in screen"></figure></div></div>
     <div class="proj__copy" data-sc-in data-sc-stagger="60">
       <p class="lbl__kind">UX design</p>
@@ -251,81 +236,6 @@
         <li><b>250+</b> screens moved to the Ink design system</li>
       </ul>
       <div class="proj__go"><a class="btn" href="case-docusign.html">See case study</a></div>
-    </div>
-  </section>
-
-  <section class="proj proj--flip" id="puzzling" data-blob-at="4" data-blob-side="right" data-nav-for="work" data-sc-act="flow" aria-labelledby="pp-t">
-    <div class="proj__media"><div class="proj__frame" data-sc-tilt="8"><figure class="shot" data-sc-parallax="-0.9"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/Puzzling-Pages-Landing-1-1024x576.avif" alt="Puzzling Places key art with a photogrammetry temple"></figure></div></div>
-    <div class="proj__copy" data-sc-in data-sc-stagger="60">
-      <p class="lbl__kind">3D work · UX design</p>
-      <h2 class="proj__title" id="pp-t">Puzzling Places</h2>
-      <p class="proj__text">A modernised interface for a meditative VR jigsaw game: familiar from 2D, native to space.</p>
-      <ul class="proj__points">
-        <li>Menus moved within reach and clearly labelled</li>
-        <li>A progress ring so no piece is left behind</li>
-        <li>A table for four, like a real puzzle night</li>
-      </ul>
-      <div class="proj__go"><a class="btn" href="case-puzzling.html">See case study</a></div>
-    </div>
-  </section>
-
-  <section class="proj" id="fabcars" data-blob-at="5" data-blob-side="left" data-nav-for="work" data-sc-act="flow" aria-labelledby="fc-t">
-    <div class="proj__media"><div class="proj__frame" data-sc-tilt="8"><figure class="shot" data-sc-parallax="-0.9"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/Fab-2-1024x589.png" alt="Rendered car dealership exterior"></figure></div></div>
-    <div class="proj__copy" data-sc-in data-sc-stagger="60">
-      <p class="lbl__kind">UX design · AR</p>
-      <h2 class="proj__title" id="fc-t">USC Fabcars</h2>
-      <p class="proj__text">An AR app that lets car buyers place the car they want inside their own home.</p>
-      <ul class="proj__points">
-        <li>Built for <b>Trophy Automotives</b></li>
-        <li>Aimed at buyers aged <b>18 to 30</b></li>
-        <li>AR try-at-home plus a <b>VR showroom</b></li>
-      </ul>
-      <div class="proj__go"><a class="btn" href="case-fabcars.html">See case study</a></div>
-    </div>
-  </section>
-
-  <section class="proj proj--flip" id="uw" data-blob-at="0" data-blob-side="right" data-nav-for="work" data-sc-act="flow" aria-labelledby="uw-t">
-    <div class="proj__media"><div class="proj__frame" data-sc-tilt="8"><figure class="shot" data-sc-parallax="-0.9"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/uw-1024x682.jpg" alt="University of Washington choir platform on a laptop"></figure></div></div>
-    <div class="proj__copy" data-sc-in data-sc-stagger="60">
-      <p class="lbl__kind">UX design · Web design</p>
-      <h2 class="proj__title" id="uw-t">University of Washington</h2>
-      <p class="proj__text">A choir platform that kept classes and concerts going during COVID-19.</p>
-      <ul class="proj__points">
-        <li>Students upload their MP3 and MP4 recordings</li>
-        <li>Live end-of-quarter concert broadcasts</li>
-        <li>One of the department's <b>most successful</b> programs</li>
-      </ul>
-      <div class="proj__go"><a class="btn" href="case-uw.html">See case study</a></div>
-    </div>
-  </section>
-
-  <section class="proj" id="threed" data-blob-at="1" data-blob-side="left" data-nav-for="work" data-sc-act="flow" aria-labelledby="3d-t">
-    <div class="proj__media"><div class="proj__frame" data-sc-tilt="8"><figure class="shot" data-sc-parallax="-0.9"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/UW-3-1024x587.png" alt="3D virtual concert stage"></figure></div></div>
-    <div class="proj__copy" data-sc-in data-sc-stagger="60">
-      <p class="lbl__kind">3D work · Video production</p>
-      <h2 class="proj__title" id="3d-t">3D Work</h2>
-      <p class="proj__text">3D visualisation that lets people see a space before it is built.</p>
-      <ul class="proj__points">
-        <li><b>Two</b> church construction projects</li>
-        <li>A virtual stage for the <b>University of Washington</b></li>
-        <li>3D characters in <b>Maya</b> and <b>ZBrush</b></li>
-      </ul>
-      <div class="proj__go"><a class="btn" href="case-3d.html">See case study</a></div>
-    </div>
-  </section>
-
-  <section class="proj proj--flip" id="razor" data-blob-at="2" data-blob-side="right" data-nav-for="work" data-sc-act="flow" aria-labelledby="rr-t">
-    <div class="proj__media"><div class="proj__frame" data-sc-tilt="8"><figure class="shot" data-sc-parallax="-0.9"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/Model-Sample-Pics-768x833.jpg" alt="Grid of fashion portfolio portraits"></figure></div></div>
-    <div class="proj__copy" data-sc-in data-sc-stagger="60">
-      <p class="lbl__kind">3D work · Photography · Web design</p>
-      <h2 class="proj__title" id="rr-t">Razor Reflection</h2>
-      <p class="proj__text">A fashion photography studio in downtown Los Angeles, building portfolios.</p>
-      <ul class="proj__points">
-        <li>Prepared every shoot and the gear</li>
-        <li>Booked makeup and hair artists</li>
-        <li>Handled post-production</li>
-      </ul>
-      <div class="proj__go"><a class="btn" href="case-razor.html">See case study</a></div>
     </div>
   </section>
 
@@ -341,6 +251,96 @@
         <li>Steered the product toward hosted <b>group trips</b></li>
       </ul>
       <div class="proj__go"><a class="btn" href="case-tripmix.html">See case study</a></div>
+    </div>
+  </section>
+
+  <section class="proj proj--flip" id="nfl" data-blob-at="4" data-blob-side="right" data-nav-for="work" data-sc-act="flow" aria-labelledby="nfl-t">
+    <div class="proj__media"><div class="proj__frame" data-sc-tilt="8"><figure class="shot" data-sc-parallax="-0.9"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/MM-2-1024x683.jpg" alt="NFL Fantasy league site on a laptop"></figure></div></div>
+    <div class="proj__copy" data-sc-in data-sc-stagger="60">
+      <p class="lbl__kind">UX design · Video production · Web design</p>
+      <h2 class="proj__title" id="nfl-t">NFL Fantasy</h2>
+      <p class="proj__text">The media and engagement system for an exclusive fantasy football league, from the platform to the broadcasts.</p>
+      <ul class="proj__points">
+        <li><b>Nine seasons</b>, since 2017</li>
+        <li>An AI broadcast pipeline, <b>3&times;</b> faster</li>
+        <li><b>Zero</b> missed deadlines all season</li>
+      </ul>
+      <div class="proj__go"><a class="btn" href="case-nfl.html">See case study</a></div>
+    </div>
+  </section>
+
+  <section class="proj" id="puzzling" data-blob-at="5" data-blob-side="left" data-nav-for="work" data-sc-act="flow" aria-labelledby="pp-t">
+    <div class="proj__media"><div class="proj__frame" data-sc-tilt="8"><figure class="shot" data-sc-parallax="-0.9"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/Puzzling-Pages-Landing-1-1024x576.avif" alt="Puzzling Places key art with a photogrammetry temple"></figure></div></div>
+    <div class="proj__copy" data-sc-in data-sc-stagger="60">
+      <p class="lbl__kind">3D work · UX design</p>
+      <h2 class="proj__title" id="pp-t">Puzzling Places</h2>
+      <p class="proj__text">A modernised interface for a meditative VR jigsaw game: familiar from 2D, native to space.</p>
+      <ul class="proj__points">
+        <li>Menus moved within reach and clearly labelled</li>
+        <li>A progress ring so no piece is left behind</li>
+        <li>A table for four, like a real puzzle night</li>
+      </ul>
+      <div class="proj__go"><a class="btn" href="case-puzzling.html">See case study</a></div>
+    </div>
+  </section>
+
+  <section class="proj proj--flip" id="fabcars" data-blob-at="0" data-blob-side="right" data-nav-for="work" data-sc-act="flow" aria-labelledby="fc-t">
+    <div class="proj__media"><div class="proj__frame" data-sc-tilt="8"><figure class="shot" data-sc-parallax="-0.9"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/Fab-2-1024x589.png" alt="Rendered car dealership exterior"></figure></div></div>
+    <div class="proj__copy" data-sc-in data-sc-stagger="60">
+      <p class="lbl__kind">UX design · AR</p>
+      <h2 class="proj__title" id="fc-t">USC Fabcars</h2>
+      <p class="proj__text">An AR app that lets car buyers place the car they want inside their own home.</p>
+      <ul class="proj__points">
+        <li>Built for <b>Trophy Automotives</b></li>
+        <li>Aimed at buyers aged <b>18 to 30</b></li>
+        <li>AR try-at-home plus a <b>VR showroom</b></li>
+      </ul>
+      <div class="proj__go"><a class="btn" href="case-fabcars.html">See case study</a></div>
+    </div>
+  </section>
+
+  <section class="proj" id="uw" data-blob-at="1" data-blob-side="left" data-nav-for="work" data-sc-act="flow" aria-labelledby="uw-t">
+    <div class="proj__media"><div class="proj__frame" data-sc-tilt="8"><figure class="shot" data-sc-parallax="-0.9"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/uw-1024x682.jpg" alt="University of Washington choir platform on a laptop"></figure></div></div>
+    <div class="proj__copy" data-sc-in data-sc-stagger="60">
+      <p class="lbl__kind">UX design · Web design</p>
+      <h2 class="proj__title" id="uw-t">University of Washington</h2>
+      <p class="proj__text">A choir platform that kept classes and concerts going during COVID-19.</p>
+      <ul class="proj__points">
+        <li>Students upload their MP3 and MP4 recordings</li>
+        <li>Live end-of-quarter concert broadcasts</li>
+        <li>One of the department's <b>most successful</b> programs</li>
+      </ul>
+      <div class="proj__go"><a class="btn" href="case-uw.html">See case study</a></div>
+    </div>
+  </section>
+
+  <section class="proj proj--flip" id="threed" data-blob-at="2" data-blob-side="right" data-nav-for="work" data-sc-act="flow" aria-labelledby="3d-t">
+    <div class="proj__media"><div class="proj__frame" data-sc-tilt="8"><figure class="shot" data-sc-parallax="-0.9"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/UW-3-1024x587.png" alt="3D virtual concert stage"></figure></div></div>
+    <div class="proj__copy" data-sc-in data-sc-stagger="60">
+      <p class="lbl__kind">3D work · Video production</p>
+      <h2 class="proj__title" id="3d-t">3D Work</h2>
+      <p class="proj__text">3D visualisation that lets people see a space before it is built.</p>
+      <ul class="proj__points">
+        <li><b>Two</b> church construction projects</li>
+        <li>A virtual stage for the <b>University of Washington</b></li>
+        <li>3D characters in <b>Maya</b> and <b>ZBrush</b></li>
+      </ul>
+      <div class="proj__go"><a class="btn" href="case-3d.html">See case study</a></div>
+    </div>
+  </section>
+
+  <section class="proj" id="razor" data-blob-at="3" data-blob-side="left" data-nav-for="work" data-sc-act="flow" aria-labelledby="rr-t">
+    <div class="proj__media"><div class="proj__frame" data-sc-tilt="8"><figure class="shot" data-sc-parallax="-0.9"><img src="https://emikobayashi.com/wp-content/uploads/2018/03/Model-Sample-Pics-768x833.jpg" alt="Grid of fashion portfolio portraits"></figure></div></div>
+    <div class="proj__copy" data-sc-in data-sc-stagger="60">
+      <p class="lbl__kind">3D work · Photography · Web design</p>
+      <h2 class="proj__title" id="rr-t">Razor Reflection</h2>
+      <p class="proj__text">A fashion photography studio in downtown Los Angeles, building portfolios.</p>
+      <ul class="proj__points">
+        <li>Prepared every shoot and the gear</li>
+        <li>Booked makeup and hair artists</li>
+        <li>Handled post-production</li>
+      </ul>
+      <div class="proj__go"><a class="btn" href="case-razor.html">See case study</a></div>
     </div>
   </section>
 
@@ -428,7 +428,7 @@
 
 <script src="scrollcraft.js"></script>
 <script>ScrollCraft.mount(document.body);</script>
-<script src="blob.js?v=16"></script>
+<script src="blob.js?v=17"></script>
 <script src="cursor.js?v=4"></script>
 <script>
 (function () {
@@ -438,7 +438,7 @@
   var clamp = function (x, a, b) { return x < a ? a : x > b ? b : x; };
   var ease = function (x) { x = clamp(x, 0, 1); return x * x * (3 - 2 * x); };
 
-  EKBlob(document.querySelector('.blob'), { reduce: rm, ground: '#3b2182' });
+  EKBlob(document.querySelector('.blob'), { reduce: rm, ground: '#e8e8e6' });
 
   /* ---------- opening: four planes at different rates, plus a lean ---------- */
   var hero = document.querySelector('.hero');

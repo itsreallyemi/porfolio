@@ -7,7 +7,7 @@
   var rm = root.classList.contains('rm');
 
   ScrollCraft.mount(document.body);
-  EKBlob(document.querySelector('.blob'), { reduce: rm, ground: '#3b2182' });
+  EKBlob(document.querySelector('.blob'), { reduce: rm, ground: '#e8e8e6' });
 
   /* Folio: the current section number and title in the bar. */
   var secs = [].slice.call(document.querySelectorAll('[data-title]'));
