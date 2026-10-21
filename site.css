@@ -13,7 +13,7 @@
   --sc-accent-ink: #161616;
   --ek-mark:       #B8480F;  /* orange dark enough for small text on the grey */
   --ek-deep:       #D6D6D3;
-  --ek-grid:       rgb(0 0 0 / 0.07);
+  --ek-grid:       rgb(0 0 0 / 0.16);
   --ek-radius:     clamp(12px, 1.2vw, 20px);  /* every image, video and card */
   --sc-font-display: "Mulish", "Muli", system-ui, sans-serif;
   --sc-font-text:    "Mulish", "Muli", system-ui, sans-serif;
@@ -27,9 +27,21 @@
 }
 
 html { background: var(--sc-canvas); }
-body {
-  color: var(--sc-ink);
-  background: linear-gradient(to right, var(--ek-grid) 1px, transparent 1px) 0 0 / 25% 100% fixed, var(--sc-canvas);
+body { color: var(--sc-ink); background: transparent; }
+/* The grid is the bottom layer: above the page colour, below the blob and
+   everything else. Crisp in the middle of the screen, fading to the edges. */
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    linear-gradient(to right, var(--ek-grid) 1px, transparent 1px) 0 0 / 48px 48px,
+    linear-gradient(to bottom, var(--ek-grid) 1px, transparent 1px) 0 0 / 48px 48px;
+  /* An eased fade: full strength in the middle, then a long soft falloff
+     that reaches nothing right at each edge of the screen. */
+  --fade: radial-gradient(ellipse closest-side at 50% 50%,
+    #000 0%, #000 22%, rgb(0 0 0 / 0.86) 38%, rgb(0 0 0 / 0.62) 54%,
+    rgb(0 0 0 / 0.36) 70%, rgb(0 0 0 / 0.15) 84%, rgb(0 0 0 / 0.04) 94%, transparent 100%);
+  -webkit-mask: var(--fade);
+          mask: var(--fade);
 }
 .sc-grain { opacity: 0.025; z-index: 2; }
 img { display: block; }
