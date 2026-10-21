@@ -118,6 +118,8 @@
 
 /* ------------------------------------------------------------- phones -- */
 @media (max-width: 1099px) { .cs-now { display: none; } }
+/* Small phones: the logo and name already lead back to all work. */
+@media (max-width: 520px) { .cs-nav__all { display: none; } }
 @media (max-width: 860px) {
   .cs-nav { gap: var(--sc-4); }
   .c-hero, .c-ch, .c-ch--flip { grid-template-columns: 1fr; gap: var(--sc-6); min-height: 0; }

@@ -136,7 +136,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     background: var(--sc-canvas); color: var(--sc-ink); font: 700 var(--sc-t-sm)/1 var(--sc-font-text);
   }
 }
-@media (max-width: 420px) { .bar__name { display: none; } }
+/* Phones: keep the logo and name, drop the background grid. */
+@media (max-width: 420px) { .bar__mark img { width: 2.6rem; } .bar__name { font-size: var(--sc-t-sm); } }
+@media (max-width: 760px) { body::before { display: none; } }
 
 /* ----------------------------------------------------------- the cursor -- */
 /* Two layers: a solid black dot on top, a larger see-through orange disc below
